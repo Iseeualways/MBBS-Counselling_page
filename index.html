@@ -47,7 +47,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: smooth !important;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1578,7 +1578,7 @@
 
     .college-card .body {
       padding: 20px 20px 22px;
-      background: linear-gradient(180deg, white, rgb(246, 246, 255), rgb(217, 237, 255));
+      background: linear-gradient(180deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.57), rgba(176, 189, 207, 0.762));
       border-bottom: 2px solid rgba(0, 0, 255, 0.181);
       display: flex;
       flex-direction: column;
@@ -1614,7 +1614,7 @@
     }
 
     .college-card a.enquire {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--brand-deep);
       display: inline-flex;
@@ -1676,7 +1676,9 @@
 
     /* ============ FINAL CTA ============ */
     .final-cta {
-      background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+      background: linear-gradient(180deg, rgba(0, 40, 170, 0.425), rgba(0, 40, 170, 0.178), rgb(255, 255, 255)), url('media/140661 (1).jpg');
+      background-size: cover;
+      background-position: center;
       border-radius: var(--r-lg);
       padding: clamp(46px, 6vw, 80px) clamp(28px, 6vw, 64px);
       text-align: center;
@@ -1698,12 +1700,12 @@
 
     .final-cta h2 {
       position: relative;
-      color: #fff;
+      color: #002f86;
       font-size: clamp(1.8rem, 3.6vw, 2.8rem);
       line-height: 1.2;
-      max-width: 780px;
+      max-width: 1180px;
       margin: 0 auto 30px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .final-cta h2 em {
@@ -3001,7 +3003,7 @@
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4 reveal">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 reveal">
           <div class="col">
             <div class="college-card">
               <div class="img-wrap"><img
@@ -3232,8 +3234,7 @@
           </div>
           <div class="col">
             <div class="college-card">
-              <div class="img-wrap"><img src="clg-img/Devaraj.webp" alt="Devaraj College"
-                  loading="lazy"></div>
+              <div class="img-wrap"><img src="clg-img/Devaraj.webp" alt="Devaraj College" loading="lazy"></div>
               <div class="body">
                 <h4>Sri Devaraj Urs Medical College (SDUMC), Kolar</h4>
                 <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -3259,11 +3260,219 @@
       </div>
     </section>
 
+
+    <!-- ============ FAQ ================== -->
+
+    <section class="faq-section section-padding">
+      <div class="container">
+        <div class="colleges-head text-center">
+          <div class="sec-head reveal from-left" style="margin-bottom:0;">
+            <div class="faq-eyebrow">Frequently Asked Questions</div>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Should I participate in both MCC and State MBBS counselling?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, if you are eligible, participating in both the Medical Counselling Committee (MCC) counselling and
+                your respective State Counselling Authority can significantly improve your chances of securing an MBBS
+                seat. Since each counselling process has separate registrations, schedules, and seat pools, applying for
+                both gives you access to more admission opportunities.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span> How should I prioritise MBBS colleges during the choice filling process?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your choice filling strategy should be based on factors such as your NEET UG 2026 rank, previous years'
+                closing ranks, tuition fees, location, hospital infrastructure, clinical exposure, internship
+                opportunities, and preferred quota. Arranging colleges strategically in the order of your preference can
+                improve your chances of securing a seat that aligns with your academic and career goals.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I upgrade my allotted MBBS seat in the next counselling round?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, depending on the counselling authority's guidelines and your eligibility, you may choose to
+                participate in subsequent rounds for an upgrade. If a higher preferred college becomes available based
+                on your rank and preferences, your allotted seat may be upgraded during the next round of counselling.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What happens if I do not report to the allotted medical college?</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Candidates who fail to report to the allotted medical college within the prescribed reporting period
+                may lose their allotted seat. Depending on the counselling authority and the stage of counselling, such
+                candidates may also forfeit their security deposit or become ineligible for certain subsequent
+                counselling rounds. Candidates should always follow the reporting schedule notified by the concerned
+                counselling authority.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How can personalised MBBS counselling help improve my admission chances?
+              </span>
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Personalised MBBS counselling provides guidance throughout the admission process, including college
+                shortlisting, choice filling strategy, quota selection, counselling registration, document preparation,
+                seat allotment decisions, and admission formalities. The guidance is tailored to your NEET UG rank,
+                category, budget, preferred colleges, and career aspirations, helping you make informed decisions during
+                every stage of counselling.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .faq-section {
+        background: #ffffff;
+      }
+
+      .faq-eyebrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        margin: 0 auto 16px;
+
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--brand);
+      }
+
+      .faq-eyebrow::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--brand);
+      }
+
+      .faq-wrapper {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .faq-item {
+        background: #fff;
+        border-bottom: 2px solid #e7ebf3;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: .3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 12px 30px rgba(16, 24, 40, .06);
+      }
+
+      .faq-question {
+        width: 100%;
+        border: 0;
+        background: none;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 16px 24px;
+
+        font-size: 17px;
+        font-weight: 600;
+        color: #1f2937;
+        text-align: left;
+      }
+
+      .faq-question .icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #eef3ff;
+        color: var(--brand);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+        font-weight: 400;
+
+        transition: .3s;
+        flex-shrink: 0;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease;
+      }
+
+      .faq-answer p {
+        padding: 0 24px 22px;
+        margin: 0;
+        color: var(--ink);
+        line-height: 1.8;
+        font-size: 16px;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+      }
+
+      .faq-item.active .icon {
+        transform: rotate(45deg);
+        background: var(--brand);
+        color: #fff;
+      }
+
+      @media(max-width:768px) {
+
+        .faq-question {
+          padding: 18px;
+          font-size: 16px;
+        }
+
+        .faq-answer p {
+          padding: 0 18px 18px;
+        }
+
+      }
+    </style>
+
     <!-- ============ FINAL CTA ============ -->
     <section id="contact">
       <div class="wrap">
         <div class="final-cta reveal">
-          <h2>Looking for MBBS admission guidance to get into the best <em>MBBS colleges</em> in Karnataka?
+          <h2>Want to Maximise Your Chances of Getting Into a Top MBBS College in Karnataka?
+
           </h2>
           <div class="actions">
             <a href="#lead-form" class="btn btn-on-dark">Enquire Now</a>
@@ -3444,80 +3653,6 @@
         document.getElementById('leadSuccess').classList.add('is-visible');
       });
 
-      /* ---------- RANK PREDICTOR ---------- */
-      var rankForm = document.getElementById('rankForm');
-      var predictorFormWrap = document.getElementById('predictorFormWrap');
-      var predictorResult = document.getElementById('predictorResult');
-      var ringFg = document.getElementById('ringFg');
-      var marksOut = document.getElementById('marksOut');
-      var rankRangeOut = document.getElementById('rankRangeOut');
-      var CIRC = 2 * Math.PI * 70; // 439.8
-
-      function estimateRank(marks) {
-        // Illustrative estimate only — a stand-in curve until real historical
-        // marks-to-rank / percentile data is wired in from previous years' results.
-        var m = Math.max(0, Math.min(720, marks));
-        var pct = m / 720;
-        var rank = Math.round(1200000 * Math.pow(1 - pct, 3.1)) + 1;
-        var low = Math.max(1, Math.round(rank * 0.85));
-        var high = Math.round(rank * 1.18);
-        return { low: low, high: high };
-      }
-
-      function animateCount(el, to, suffix, duration) {
-        var start = 0, startTime = null;
-        suffix = suffix || '';
-        function step(ts) {
-          if (!startTime) startTime = ts;
-          var p = Math.min((ts - startTime) / duration, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(start + (to - start) * eased) + suffix;
-          if (p < 1) window.requestAnimationFrame(step);
-        }
-        window.requestAnimationFrame(step);
-      }
-
-      rankForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var ok = true;
-        var attemptedEl = document.getElementById('rankAttempted');
-        var correctEl = document.getElementById('rankCorrect');
-        var categoryEl = document.getElementById('rankCategory');
-        var domicileEl = document.getElementById('rankDomicile');
-        var quotaEl = document.getElementById('rankQuota');
-        var attemptedErr = document.getElementById('rankAttemptedErr');
-        var correctErr = document.getElementById('rankCorrectErr');
-        var categoryErr = document.getElementById('rankCategoryErr');
-        var domicileErr = document.getElementById('rankDomicileErr');
-        var quotaErr = document.getElementById('rankQuotaErr');
-        attemptedErr.textContent = ''; correctErr.textContent = ''; categoryErr.textContent = '';
-        domicileErr.textContent = ''; quotaErr.textContent = '';
-
-        var attempted = parseInt(attemptedEl.value, 10);
-        var correct = parseInt(correctEl.value, 10);
-
-        if (isNaN(attempted) || attempted < 0 || attempted > 180) { attemptedErr.textContent = 'Enter a number between 0 and 180.'; ok = false; }
-        if (isNaN(correct) || correct < 0 || correct > 180) { correctErr.textContent = 'Enter a number between 0 and 180.'; ok = false; }
-        if (ok && correct > attempted) { correctErr.textContent = 'Can\'t exceed questions attempted.'; ok = false; }
-        if (!categoryEl.value) { categoryErr.textContent = 'Please select your category.'; ok = false; }
-        if (!domicileEl.value) { domicileErr.textContent = 'Please select your domicile state.'; ok = false; }
-        if (!quotaEl.value) { quotaErr.textContent = 'Please select your quota preference.'; ok = false; }
-
-        if (!ok) return;
-
-        var wrong = attempted - correct;
-        var marks = Math.max(0, correct * 4 - wrong * 1);
-        var range = estimateRank(marks);
-
-        predictorFormWrap.style.display = 'none';
-        predictorResult.classList.add('is-visible');
-
-        var offset = CIRC - (marks / 720) * CIRC;
-        requestAnimationFrame(function () { ringFg.style.strokeDashoffset = offset; });
-        animateCount(marksOut, marks, '', 1100);
-        rankRangeOut.textContent = range.low.toLocaleString('en-IN') + ' – ' + range.high.toLocaleString('en-IN');
-      });
-
       document.getElementById('predictorReset').addEventListener('click', function () {
         predictorResult.classList.remove('is-visible');
         predictorFormWrap.style.display = 'block';
@@ -3525,6 +3660,27 @@
         ringFg.style.strokeDashoffset = CIRC;
       });
     })();
+
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+
+      question.addEventListener("click", () => {
+
+        const item = question.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(faq => {
+
+          if (faq !== item) {
+            faq.classList.remove("active");
+          }
+
+        });
+
+        item.classList.toggle("active");
+
+      });
+
+    });
   </script>
 
 </body>
