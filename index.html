@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     /* ============ TOKENS ============ */
     :root {
@@ -110,7 +111,7 @@
     .wrap {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 56px);
+      padding: 0 clamp(2px, 4vw, 56px);
     }
 
     .eyebrow {
@@ -282,6 +283,29 @@
       margin: 0 auto;
     }
 
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding-inline: 4px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lead-card {
+        width: 100%;
+        max-width: 325px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        padding: 24px;
+      }
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -384,7 +408,7 @@
     .mobile-nav {
       position: fixed;
       inset: 0;
-      z-index: 190;
+      z-index: 1200;
       background: var(--ink);
       display: flex;
       flex-direction: column;
@@ -443,6 +467,8 @@
       color: rgba(255, 255, 255, .5);
       font-size: 13px;
     }
+
+
 
     /* ============ HERO ============ */
     .hero {
@@ -571,6 +597,12 @@
       z-index: 1;
     }
 
+    @media (max-width: 768px) {
+      .lead-card {
+        margin-left: 0;
+      }
+    }
+
     .lead-card h3 {
       font-size: 18px;
       text-align: center;
@@ -658,7 +690,7 @@
 
     /* ============ SECTION HEADERS ============ */
     section {
-      padding: clamp(60px, 7vw, 50px) 0;
+      padding: clamp(20px, 7vw, 50px) 0;
     }
 
     .sec-head {
@@ -891,6 +923,12 @@
       background: var(--white);
       padding: 34px 32px;
       height: 100%;
+    }
+
+    @media (max-width: 767px) {
+      .panel-body {
+        padding: 22px 12px;
+      }
     }
 
     .panel-body ul {
@@ -1262,24 +1300,6 @@
       padding: 14px 16px;
     }
 
-    /* Mini CTA banner between the two counselling processes */
-    .final-cta.mini {
-      padding: clamp(34px, 4.5vw, 52px) clamp(24px, 5vw, 48px);
-    }
-
-    .final-cta.mini h2 {
-      font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-      margin-bottom: 22px;
-    }
-
-    .final-cta.mini h2 em {
-      display: block;
-      font-size: 15px;
-      font-weight: 500;
-      color: #cfdaff;
-      margin-top: 10px;
-      font-style: normal;
-    }
 
     /* Documents checklist */
     .doc-card {
@@ -1309,6 +1329,10 @@
     }
 
     @media (max-width: 640px) {
+      .doc-card {
+        padding: 10px;
+      }
+
       .doc-list {
         columns: 1;
       }
@@ -1330,7 +1354,7 @@
       background: linear-gradient(135deg, var(--ink) 10%, var(--brand-deep)100%);
       border-radius: var(--r-lg);
       overflow: hidden;
-      padding: clamp(30px, 4vw, 52px);
+      padding: clamp(5px, 4vw, 52px);
     }
 
     .predictor-copy {
@@ -1578,8 +1602,9 @@
 
     .college-card .body {
       padding: 20px 20px 22px;
-      background: linear-gradient(180deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.57), rgba(176, 189, 207, 0.762));
-      border-bottom: 2px solid rgba(0, 0, 255, 0.181);
+      background: linear-gradient(180deg, #f2f2f250 0%, #e8e8e8 50%, #dbdbdb 100%);
+      border-bottom: 3px solid rgba(59, 59, 59, 0.349);
+      border-radius: 14px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -1605,7 +1630,7 @@
       gap: 6px;
       font-size: 14px;
       color: var(--ink-soft);
-      margin-bottom: 14px;
+      margin-bottom: 2px;
     }
 
     .college-card .loc svg {
@@ -1613,23 +1638,43 @@
       flex-shrink: 0;
     }
 
-    .college-card a.enquire {
+    .college-card .enquire {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #0f418b;
       font-size: 16px;
       font-weight: 600;
-      color: var(--brand-deep);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      text-decoration: none;
       margin-top: auto;
-      padding-top: 10px;
+      position: relative;
+      z-index: 2;
     }
 
-    .college-card a.enquire svg {
-      transition: transform .3s var(--ease);
+    .college-card .arrow-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #fff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      transition: .35s ease;
     }
 
-    .college-card a.enquire:hover svg {
-      transform: translateX(3px);
+    .college-card .arrow-circle svg {
+      color: var(--brand);
+      /* Change to your brand color */
+      transition: .35s ease;
+    }
+
+    .college-card:hover .arrow-circle {
+      transform: translateX(6px);
     }
 
     .college-card.more {
@@ -1716,99 +1761,129 @@
     .final-cta .actions {
       position: relative;
       display: flex;
-      gap: 16px;
+      gap: 2px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    /* ============ FOOTER ============ */
-    footer {
+    .footer-main {
       background: var(--ink);
-      color: rgba(255, 255, 255, .7);
-      padding: 60px 0 26px;
+      color: rgba(255, 255, 255, .75);
+      padding: 70px 0;
     }
 
-    .foot-flex {
-      padding-bottom: 42px;
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-    }
-
-    .foot-brand {
-      max-width: 540px;
-    }
-
-    .foot-brand .logo {
-      display: inline-flex;
-    }
-
-    .foot-brand .logo img {
-      height: 68px;
+    .footer-logo img {
+      height: 70px;
       width: auto;
     }
 
-    .foot-brand p {
-      font-size: 13.5px;
-      color: rgba(255, 255, 255, .5);
-      margin-top: 16px;
-      max-width: 64ch;
-      line-height: 1.7;
+    .footer-desc {
+      margin: 22px 0 28px;
+      max-width: 560px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, .65);
+      font-size: 15px;
     }
 
-    .foot-col h5 {
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .42);
-      margin-bottom: 16px;
+    .footer-title {
+      color: #fff;
+      font-size: 22px;
       font-weight: 700;
+      margin-bottom: 24px;
     }
 
-    .foot-col h5.spaced {
-      margin-top: 26px;
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .foot-col ul {
+    .footer-contact li {
       display: flex;
-      flex-direction: column;
-      gap: 11px;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
     }
 
-    .foot-col a {
-      font-size: 14px;
-      color: rgba(255, 255, 255, .78);
-      transition: color .25s var(--ease);
-    }
+    .footer-contact i {
 
-    .foot-col a:hover {
-      color: #9fb3ff;
-    }
-
-    .foot-social {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .foot-social a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, .16);
+      color: var(--ink-soft);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background .25s var(--ease), border-color .25s var(--ease);
+      font-size: 15px;
+      flex-shrink: 0;
     }
 
-    .foot-social a:hover {
+    .footer-contact a {
+      color: rgba(255, 255, 255, .82);
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--brand);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-social a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .15);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #fff;
+
+      transition: .3s;
+    }
+
+    .footer-social a:hover {
       background: var(--brand);
       border-color: var(--brand);
-      color: #fff;
+      transform: translateY(-4px);
     }
 
+    .footer-social i {
+      font-size: 17px;
+    }
 
+    /* Mobile */
+
+    @media (max-width:991px) {
+
+      .footer-main {
+        padding: 55px 0;
+        text-align: left;
+      }
+
+      .footer-desc {
+        max-width: 100%;
+      }
+
+      .footer-title {
+        margin-top: 10px;
+      }
+
+      .footer-social {
+        justify-content: flex-start;
+      }
+
+      .footer-contact li {
+        justify-content: flex-start;
+      }
+
+    }
 
     /* ============ RESPONSIVE ============ */
+
     @media (max-width: 768px) {
       .hero-copy {
         margin-top: 60px;
@@ -1886,13 +1961,58 @@
         <a href="#contact">Contact Us</a>
       </nav>
       <div class="nav-cta">
-        <a href="tel:09036020076" class="nav-phone">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="tel:+919036020076" class="call-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span style="text-decoration: underline;">90360 20076</span>
+          <strong>90360 20076</strong>
         </a>
+
+        <style>
+          .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 6px 12px;
+
+            background: rgb(202, 222, 253);
+            color: var(--brand-deep);
+
+            border-radius: 999px;
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            transition: .35s ease;
+
+
+          }
+
+          .call-btn svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+          }
+
+          .call-btn strong {
+            font-size: 15px !important;
+            font-weight: 500;
+          }
+
+          .call-btn:hover {
+            font-weight: 700;
+          }
+
+          /* Hide Call Button on Mobile */
+          @media (max-width: 767.98px) {
+            .call-btn {
+              display: none !important;
+            }
+          }
+        </style>
         <button class="nav-toggle" id="navToggle"
           aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
@@ -1911,633 +2031,306 @@
     <div class="mobile-nav-foot">Call 1800 120 8696 (Toll Free) · MBBS Admissions Guidance</div>
   </div>
 
-  <main id="top">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="row hero-grid g-4 g-lg-5 align-items-start">
-          <div class="col-lg-7 hero-copy">
-            <p class="eyebrow reveal from-left">One Decision Can Shape Your Medical Career</p>
-            <h1 class="hero-headline reveal from-left">Expert MBBS Counselling<br> for <span class="hl">NEET
-                UG
-                2026</span> Aspirants
-            </h1>
-            <p class="hero-lede reveal">Choosing the right college is just as important as achieving a good
-              NEET UG
-              rank. Get trusted admission guidance to explore top MBBS colleges in Karnataka and across
-              India
-              through All India, KEA, and state counselling processes.
-            </p>
-            <div class="hero-actions reveal">
-              <a href="#lead-form" class="btn btn-primary">
-                Connect With Our Experts
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a href="#process" class="btn btn-ghost">See the process</a>
-            </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="row hero-grid g-4 g-lg-5 align-items-start">
+        <div class="col-lg-7 hero-copy">
+          <p class="eyebrow reveal from-left">One Decision Can Shape Your Medical Career</p>
+          <h1 class="hero-headline reveal from-left">Expert MBBS Counselling<br> for <span class="hl">NEET
+              UG
+              2026</span> Aspirants
+          </h1>
+          <p class="hero-lede reveal">Choosing the right college is just as important as achieving a good
+            NEET UG
+            rank. Get trusted admission guidance to explore top MBBS colleges in Karnataka and across
+            India
+            through All India, KEA, and state counselling processes.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#lead-form" class="btn btn-primary">
+              Connect With Our Experts
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="#process" class="btn btn-ghost">See the process</a>
           </div>
+        </div>
 
-          <div class="col-lg-5">
-            <div id="lead-form" class="lead-card reveal">
-              <h3>Fill Out the Form to Get Started with Your MBBS Admission Journey for A.Y. <span
-                  style=" font-weight: 700; color: var(--brand-deep);"> 2026-27</span> </h3>
-              <form id="leadForm" novalidate>
-                <div class="field">
-                  <input type="text" id="leadName" name="name" placeholder="Full Name: " autocomplete="name">
-                  <div class="err" id="leadNameErr"></div>
-                </div>
-                <div class="field">
-                  <input type="text" id="leadName" name="name" placeholder="Email Address:" autocomplete="name">
-                  <div class="err" id="leadNameErr"></div>
-                </div>
-                <div class="field">
-                  <input type="text" id="leadName" name="name" placeholder="Phone No:" autocomplete="name">
-                  <div class="err" id="leadNameErr"></div>
-                </div>
-                <div class="field">
-                  <select id="leadState" name="state">
-                    <option value="">Select your state</option>
-                    <option>Andhra Pradesh</option>
-                    <option>Arunachal Pradesh</option>
-                    <option>Andaman &amp; Nicobar</option>
-                    <option>Assam</option>
-                    <option>Bihar</option>
-                    <option>Chandigarh</option>
-                    <option>Chhattisgarh</option>
-                    <option>Dadra and Nagar Haveli</option>
-                    <option>Daman &amp; Diu</option>
-                    <option>Delhi</option>
-                    <option>Goa</option>
-                    <option>Gujarat</option>
-                    <option>Haryana</option>
-                    <option>Himachal Pradesh</option>
-                    <option>Jammu &amp; Kashmir</option>
-                    <option>Jharkhand</option>
-                    <option selected>Karnataka</option>
-                    <option>Kerala</option>
-                    <option>Lakshadweep</option>
-                    <option>Madhya Pradesh</option>
-                    <option>Maharashtra</option>
-                    <option>Manipur</option>
-                    <option>Meghalaya</option>
-                    <option>Mizoram</option>
-                    <option>Nagaland</option>
-                    <option>Odisha</option>
-                    <option>Puducherry</option>
-                    <option>Punjab</option>
-                    <option>Rajasthan</option>
-                    <option>Sikkim</option>
-                    <option>Tamil Nadu</option>
-                    <option>Tripura</option>
-                    <option>Telangana</option>
-                    <option>Uttarakhand</option>
-                    <option>Uttar Pradesh</option>
-                    <option>West Bengal</option>
-                  </select>
-                  <div class="err" id="leadStateErr"></div>
-                </div>
-                <div class="field">
-                  <input type="text" id="leadName" name="name" placeholder="NEET Score:" autocomplete="name">
-                  <div class="err" id="leadNameErr"></div>
-                </div>
-                <div class="field">
-                  <input type="tel" id="leadPhone" name="phone" placeholder="Your Message (Optional):"
-                    autocomplete="tel">
-                  <div class="err" id="leadPhoneErr"></div>
-                </div>
-                <div class="btn-wrapper">
-                  <button class="btn-glass">
-                    Submit Application
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 2L11 13" />
-                      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-                    </svg>
-                  </button>
-                </div>
-
-                <style>
-                  .btn-glass {
-                    display: flex;
-                    align-items: center;
-                    gap: 7px;
-                    margin: 0 auto;
-                    padding: 11px 20px;
-                    background: rgba(225, 237, 255, 0.975);
-                    backdrop-filter: blur(18px);
-                    border: 1px solid rgba(41, 83, 245, .18);
-                    border-radius: 999px;
-                    color: var(--brand);
-                    font-weight: 500;
-                    transition: .45s cubic-bezier(.23, 1, .32, 1);
-                  }
-
-                  .btn-glass svg {
-                    transition: .45s;
-                  }
-
-                  .btn-glass:hover {
-                    transform: translateX(-3px);
-                    border-color: var(--brand);
-                    box-shadow: 0 20px 50px rgba(41, 83, 245, .15);
-                    color: var(--brand-deep);
-                  }
-
-                  .btn-glass:hover svg {
-                    transform: translateX(5px);
-                  }
-                </style>
-              </form>
-              <div class="lead-success" id="leadSuccess">
-                <div class="ring"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg></div>
-                <h4>Thanks — you're on the list.</h4>
-                <p>A BangaloreStudy counsellor will call you shortly.</p>
+        <div class="col-lg-5">
+          <div id="lead-form" class="lead-card reveal">
+            <h3>Fill Out the Form to Get Started with Your MBBS Admission Journey for A.Y. <span
+                style=" font-weight: 700; color: var(--brand-deep);"> 2026-27</span> </h3>
+            <form id="leadForm" novalidate>
+              <div class="field">
+                <input type="text" id="leadName" name="name" placeholder="Full Name: " autocomplete="name">
+                <div class="err" id="leadNameErr"></div>
               </div>
+              <div class="field">
+                <input type="text" id="leadName" name="name" placeholder="Email Address:" autocomplete="name">
+                <div class="err" id="leadNameErr"></div>
+              </div>
+              <div class="field">
+                <input type="text" id="leadName" name="name" placeholder="Phone No:" autocomplete="name">
+                <div class="err" id="leadNameErr"></div>
+              </div>
+              <div class="field">
+                <select id="leadState" name="state">
+                  <option value="">Select your state</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Andaman &amp; Nicobar</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chandigarh</option>
+                  <option>Chhattisgarh</option>
+                  <option>Dadra and Nagar Haveli</option>
+                  <option>Daman &amp; Diu</option>
+                  <option>Delhi</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jammu &amp; Kashmir</option>
+                  <option>Jharkhand</option>
+                  <option selected>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Lakshadweep</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Puducherry</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Tripura</option>
+                  <option>Telangana</option>
+                  <option>Uttarakhand</option>
+                  <option>Uttar Pradesh</option>
+                  <option>West Bengal</option>
+                </select>
+                <div class="err" id="leadStateErr"></div>
+              </div>
+              <div class="field">
+                <input type="text" id="leadName" name="name" placeholder="NEET Score:" autocomplete="name">
+                <div class="err" id="leadNameErr"></div>
+              </div>
+              <div class="field">
+                <input type="tel" id="leadPhone" name="phone" placeholder="Your Message (Optional):" autocomplete="tel">
+                <div class="err" id="leadPhoneErr"></div>
+              </div>
+              <div class="btn-wrapper">
+                <button class="btn-glass">
+                  Submit Application
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13" />
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+                  </svg>
+                </button>
+              </div>
+
+              <style>
+                .btn-glass {
+                  display: flex;
+                  align-items: center;
+                  gap: 7px;
+                  margin: 0 auto;
+                  padding: 11px 20px;
+                  background: rgba(225, 237, 255, 0.975);
+                  backdrop-filter: blur(18px);
+                  border: 1px solid rgba(41, 83, 245, .18);
+                  border-radius: 999px;
+                  color: var(--brand);
+                  font-weight: 500;
+                  transition: .45s cubic-bezier(.23, 1, .32, 1);
+                }
+
+                .btn-glass svg {
+                  transition: .45s;
+                }
+
+                .btn-glass:hover {
+                  transform: translateX(-3px);
+                  border-color: var(--brand);
+                  box-shadow: 0 20px 50px rgba(41, 83, 245, .15);
+                  color: var(--brand-deep);
+                }
+
+                .btn-glass:hover svg {
+                  transform: translateX(5px);
+                }
+              </style>
+            </form>
+            <div class="lead-success" id="leadSuccess">
+              <div class="ring"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <h4>Thanks — you're on the list.</h4>
+              <p>A BangaloreStudy counsellor will call you shortly.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============ WHY US ============ -->
-    <section id="why-us">
-      <div class="wrap">
-        <div class="sec-head reveal from-left">
-          <p class="eyebrow">Why Us?</p>
-          <h2>Your Trusted Partner for MBBS Counselling</h2>
+  <!-- ============ WHY US ============ -->
+  <section id="why-us">
+    <div class="wrap">
+      <div class="sec-head reveal from-left">
+        <p class="eyebrow">Why Us?</p>
+        <h2>Your Trusted Partner for MBBS Counselling</h2>
+      </div>
+      <div class="row g-4 reveal stagger">
+        <div class="col-12 col-md-6 col-lg-3" style="--i:0">
+          <div class="why-card c-brand">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
+
+            <h3>Personalized MBBS Counselling</h3>
+            <p>Get expert guidance based on your NEET UG rank, preferred states, college preferences,
+              budget, and
+              career aspirations. Our experts help you identify the best MBBS colleges and counselling
+              options suited
+              to your profile.
+            </p>
+          </div>
         </div>
-        <div class="row g-4 reveal stagger">
-          <div class="col-12 col-md-6 col-lg-3" style="--i:0">
-            <div class="why-card c-brand">
-              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.8">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg></div>
+        <div class="col-12 col-md-6 col-lg-3" style="--i:1">
+          <div class="why-card c-rose">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg></div>
 
-              <h3>Personalized MBBS Counselling</h3>
-              <p>Get expert guidance based on your NEET UG rank, preferred states, college preferences,
-                budget, and
-                career aspirations. Our experts help you identify the best MBBS colleges and counselling
-                options suited
-                to your profile.
-              </p>
-            </div>
+            <h3>Expert Guidance</h3>
+            <p>Navigate All India Quota, State Quota, and Deemed University counselling with confidence.
+              Our
+              experienced admission experts provide accurate guidance at every stage, helping you make
+              informed
+              choices.
+            </p>
           </div>
-          <div class="col-12 col-md-6 col-lg-3" style="--i:1">
-            <div class="why-card c-rose">
-              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.8">
-                  <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" style="--i:2">
+          <div class="why-card c-violet">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="4.2" />
+                <circle cx="12" cy="12" r=".6" fill="currentColor" />
+              </svg></div>
 
-              <h3>Expert Guidance</h3>
-              <p>Navigate All India Quota, State Quota, and Deemed University counselling with confidence.
-                Our
-                experienced admission experts provide accurate guidance at every stage, helping you make
-                informed
-                choices.
-              </p>
-            </div>
+            <h3>Complete MBBS Admission Assistance</h3>
+            <p>From choice filling and seat allotment to document verification, reporting, and admission
+              formalities,
+              we support you throughout the MBBS counselling process to ensure a smooth admission
+              experience.
+            </p>
           </div>
-          <div class="col-12 col-md-6 col-lg-3" style="--i:2">
-            <div class="why-card c-violet">
-              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.8">
-                  <circle cx="12" cy="12" r="9" />
-                  <circle cx="12" cy="12" r="4.2" />
-                  <circle cx="12" cy="12" r=".6" fill="currentColor" />
-                </svg></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" style="--i:3">
+          <div class="why-card c-amber">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg></div>
 
-              <h3>Complete MBBS Admission Assistance</h3>
-              <p>From choice filling and seat allotment to document verification, reporting, and admission
-                formalities,
-                we support you throughout the MBBS counselling process to ensure a smooth admission
-                experience.
-              </p>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3" style="--i:3">
-            <div class="why-card c-amber">
-              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.8">
-                  <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                </svg></div>
-
-              <h3>Simplified and Error Free Counselling</h3>
-              <p>Every counselling round comes with strict deadlines and critical decisions. Our team
-                helps you complete
-                each step accurately, avoid common mistakes, and improve your chances of securing an
-                MBBS seat.
-              </p>
-            </div>
+            <h3>Simplified and Error Free Counselling</h3>
+            <p>Every counselling round comes with strict deadlines and critical decisions. Our team
+              helps you complete
+              each step accurately, avoid common mistakes, and improve your chances of securing an
+              MBBS seat.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============ PROCESS ============ -->
-    <section id="process">
-      <div class="wrap">
-        <div class="sec-head reveal from-left">
-          <p class="eyebrow">About Counselling</p>
-          <h2>All About NEET UG MBBS Counselling 2026</h2>
-          <!-- <p class="reveal text-dark">Every MBBS aspirant in India moves through two possible counselling tracks — the
+  <!-- ============ PROCESS ============ -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head reveal from-left">
+        <p class="eyebrow">About Counselling</p>
+        <h2>All About NEET UG MBBS Counselling 2026</h2>
+        <!-- <p class="reveal text-dark">Every MBBS aspirant in India moves through two possible counselling tracks — the
             national
             process
             run by the MCC, and the state process run by Karnataka's KEA. Here's how each one works.</p> -->
-        </div>
-
-        <div class="process-panels">
-          <div class="panel mcc">
-            <div class="row g-0">
-              <div class="col-lg-3">
-                <div class="panel-side reveal from-left">
-                  <div>
-                    <span class="authority-logo"><img
-                        src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/mcclogo.webp"
-                        alt="MCC logo" loading="lazy"></span>
-                    <h3>All India MBBS Counselling <span style="color: #dde6fd; font-weight: 800;">2026</span></h3>
-                  </div>
-                  <p class="who">Conducted by the Medical Counselling Committee</p>
-                </div>
-              </div>
-              <div class="col-lg-9">
-                <div class="panel-body reveal">
-                  <p style="font-size:16px;color:var(--ink);line-height:1.7;margin-bottom:18px;">
-                    The Medical Counselling Committee (MCC), under the Directorate General of Health
-                    Services (DGHS), Ministry of Health and Family Welfare, conducts the All India
-                    MBBS Counselling for candidates who qualify NEET UG 2026.</p>
-                  <p
-                    style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:12px;">
-                    MCC conducts counselling for admission to:</p>
-                  <ul>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>15% All India Quota (AIQ) MBBS seats in Government Medical Colleges
-                    </li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>100% MBBS seats in Deemed Universities</li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>Central Universities, AIIMS &amp; JIPMER</li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>ESIC Medical Colleges (where applicable)</li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>AFMS Medical Colleges (registration through MCC with separate
-                      admission process)
-                    </li>
-                  </ul>
-                  <div class="note"><strong>Note:</strong> Admission to 85% State Quota MBBS seats in
-                    Government
-                    Medical Colleges, and most Private Medical Colleges, is conducted by the
-                    respective State
-                    Counselling Authorities.</div>
-                  <h6 class="mb-4 mt-4 fw-bold">
-                    The All India MBBS counselling process is conducted in the following rounds:
-                  </h6>
-
-                  <div class="journey-steps">
-                    <!-- Step 1 -->
-                    <div class="j-step">
-                      <div class="j-line"></div>
-                      <div class="j-dot">1</div>
-                      <div class="j-label">Round 1</div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="j-step">
-                      <div class="j-line"></div>
-                      <div class="j-dot">2</div>
-                      <div class="j-label">Round 2</div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="j-step">
-                      <div class="j-line"></div>
-                      <div class="j-dot">3</div>
-                      <div class="j-label">Round 3</div>
-                    </div>
-
-                    <!-- Stray Vacancy -->
-                    <div class="j-step sv-step" id="svStep">
-                      <div class="j-dot">SV</div>
-                      <div class="j-label">
-                        Stray Vacancy Round
-                        <svg class="sv-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor">
-                          <path d="M6 9l6 6 6-6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="sv-detail" id="svDetail" style=" font-size: 15px;">
-                    The Stray Vacancy Round is conducted to fill MBBS seats that remain vacant after
-                    Round 3. This round is conducted online by MCC for participating institutions.
-                    Eligible candidates who satisfy the counselling guidelines can participate based
-                    on the applicable eligibility criteria for the Stray Vacancy Round. Seat
-                    allotment is carried out according to NEET UG merit, seat availability,
-                    reservation policies where applicable, and MCC counselling regulations.
-                    Candidates allotted a seat during this round are required to complete the
-                    admission process within the prescribed timeline set by MCC.
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- ============ ALL INDIA PROCESS — DETAILED STAGES ============ -->
-    <section id="aiq-process">
-      <div class="wrap">
-        <div class="sec-head reveal from-left">
-          <p class="eyebrow">Step By Step</p>
-          <h2>All India NEET UG MBBS Counselling 2026 Process</h2>
-          <p class="reveal text-dark">The Medical Counselling Committee (MCC) conducts the All India NEET UG
-            MBBS Counselling through a structured admission process. Although the counselling schedule and
-            dates differ for each round, the overall procedure remains largely the same. Before every
-            counselling round, MCC publishes the counselling schedule, seat matrix, and official
-            notifications on its portal.
-
-          </p>
-        </div>
-
-        <div class="stage-timeline reveal">
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">1</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Online Registration</h3>
-              <p>Candidates who wish to participate in the All India MBBS Counselling must complete the
-                online registration within the specified dates for the respective counselling round.
-                Fresh registration may be required for eligible counselling rounds as per the guidelines
-                issued by MCC for the academic year 2026.
-
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">2</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Payment of Counselling Fees</h3>
-              <p>After successful registration, candidates must pay the applicable counselling fee through
-                the
-                online payment gateway. The fee has two parts — a non‑refundable registration fee and a
-                refundable
-                security deposit.</p>
-              <ul class="fee-list">
-                <li>Non-refundable Registration Fee</li>
-                <li>Refundable Security Deposit</li>
-              </ul>
-
-              <style>
-                .fee-list {
-                  list-style: none;
-                  padding: 0;
-                  margin: 0;
-                }
-
-                .fee-list li {
-                  position: relative;
-                  padding-left: 26px;
-                  margin-bottom: 10px;
-                  color: var(--ink);
-                }
-
-                .fee-list li::before {
-                  content: "✓";
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  color: var(--brand);
-                  font-weight: 700;
-                }
-              </style>
-
-              <h6 class="fw-bold">Fee Structure :</h6>
-
-              <div class="fee-table-wrap">
-                <div class="table-scroll">
-                  <table class="dates fee-table">
-                    <thead>
-                      <tr>
-                        <th>Counselling Category</th>
-                        <th>Candidate Category</th>
-                        <th>Registration Fee</th>
-                        <th>Refundable Security Deposit</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>15% All India Quota, Central Universities</th>
-                        <td>General, EWS, OBC</td>
-                        <td>₹1,000</td>
-                        <td>₹10,000</td>
-                      </tr>
-                      <tr>
-                        <th>15% All India Quota, Central Universities</th>
-                        <td>SC, ST, PwBD</td>
-                        <td>₹500</td>
-                        <td>₹5,000</td>
-                      </tr>
-                      <tr>
-                        <th>Deemed Universities</th>
-                        <td>All Categories</td>
-                        <td>₹5,000</td>
-                        <td>₹2,00,000</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p class="table-hint fee-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2">
-                    <path d="M9 6l6 6-6 6" />
-                  </svg> Swipe to see all columns</p>
-              </div>
-              <div class="stage-note"><strong>Note:</strong> Candidates opting for both All India Quota
-                and Deemed
-                University counselling must pay the applicable fee for Deemed University participation.
-              </div>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">3</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Choice Filling</h3>
-              <p>Registered candidates can select their preferred medical colleges and arrange them in the
-                order of priority. During the choice filling period, candidates can add, remove, modify,
-                or reorder their preferences until the deadline. Choice filling is conducted separately
-                for every counselling round, and fresh choices must be submitted unless otherwise
-                notified by MCC.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">4</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Choice Locking</h3>
-              <p>After finalizing the list of preferred colleges, candidates must lock their choices
-                before the specified deadline. Once the choices are locked, they cannot be edited for
-                that counselling round. If candidates do not manually lock their choices, MCC may
-                automatically lock the last saved preferences after the choice locking window closes.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">5</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Seat Allotment</h3>
-              <p>Seat allotment is carried out based on several factors, including:</p>
-              <ul>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>NEET UG 2026 rank</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Candidate category</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Reservation policy</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Seat availability</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Order of college Preferences</li>
-              </ul>
-              <p>Candidates who are not allotted a seat in one round may participate in subsequent
-                counselling rounds, subject to the eligibility criteria prescribed by MCC.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">6</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Seat Allotment Result</h3>
-              <p>Once the allotment process is completed, MCC publishes the seat allotment result on its
-                official website. Candidates who receive a seat can download their allotment letter and
-                proceed with the admission process.
-              </p>
-              <div class="stage-note"><strong>Note:</strong> MCC may release a provisional seat allotment
-                result before publishing the final allotment list whenever required.
-              </div>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">7</div>
-            </div>
-            <div class="stage-content">
-              <h3>Reporting to the Allotted College</h3>
-              <p>Candidates allotted an MBBS seat must report to the respective medical college within the
-                prescribed reporting period. Failure to report within the stipulated deadline may result
-                in cancellation of the allotted seat as per the counselling regulations.
-              </p>
-              <ul>The admission process at the allotted college generally includes:
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Document Verification</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Submission of Original Documents</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Payment of Admission Fees</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Completion of College Admission Formalities</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============ MINI CTA ============ -->
-    <section id="mid-cta">
-      <div class="wrap">
-        <div class="final-cta mini reveal">
-          <h2>One Goal. One MBBS Seat.<em>Expert counselling tailored to your NEET UG rank</em></h2>
-          <div class="actions">
-            <a href="#lead-form" class="btn btn-on-dark">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section>
-      <div class="wrap">
-        <div class="panel kea">
+      <div class="process-panels">
+        <div class="panel mcc">
           <div class="row g-0">
             <div class="col-lg-3">
               <div class="panel-side reveal from-left">
-                <div> <span class="authority-logo"><img
-                      src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Kealogo.webp"
-                      alt="KEA logo" loading="lazy"></span>
-                  <h3>Karnataka MBBS Counselling <span style="color: #f1cafc; font-weight: 800;">2026</span> Process
-                  </h3>
+                <div>
+                  <span class="authority-logo"><img
+                      src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/mcclogo.webp"
+                      alt="MCC logo" loading="lazy"></span>
+                  <h3>All India MBBS Counselling <span style="color: #dde6fd; font-weight: 800;">2026</span></h3>
                 </div>
-                <p class="who">Conducted by the Karnataka Examinations Authority</p>
+                <p class="who">Conducted by the Medical Counselling Committee</p>
               </div>
             </div>
             <div class="col-lg-9">
               <div class="panel-body reveal">
-                The Karnataka Examinations Authority (KEA) conducts the Karnataka MBBS Counselling for
-                admission to medical colleges across the state. Candidates must qualify NEET UG 2026 and
-                complete the KEA counselling registration to participate in the admission process. KEA
-                conducts counselling for admission to Government Quota, Private Quota, Management Quota,
-                and NRI Quota MBBS seats offered by Government and Private Medical Colleges in
-                Karnataka.
-                <br> <br>
-                To participate in the counselling process, candidates must register through the official
-                KEA counselling portal, complete document verification, and fulfil all prescribed
-                admission requirements within the notified schedule. The Karnataka MBBS Counselling
-                process is expected to be conducted in the following rounds:
+                <p style="font-size:16px;color:var(--ink);line-height:1.7;margin-bottom:18px;">
+                  The Medical Counselling Committee (MCC), under the Directorate General of Health
+                  Services (DGHS), Ministry of Health and Family Welfare, conducts the All India
+                  MBBS Counselling for candidates who qualify NEET UG 2026.</p>
+                <p
+                  style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:12px;">
+                  MCC conducts counselling for admission to:</p>
+                <ul>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>15% All India Quota (AIQ) MBBS seats in Government Medical Colleges
+                  </li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>100% MBBS seats in Deemed Universities</li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>Central Universities, AIIMS &amp; JIPMER</li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>ESIC Medical Colleges (where applicable)</li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>AFMS Medical Colleges (registration through MCC with separate
+                    admission process)
+                  </li>
+                </ul>
+                <div class="note"><strong>Note:</strong> Admission to 85% State Quota MBBS seats in
+                  Government
+                  Medical Colleges, and most Private Medical Colleges, is conducted by the
+                  respective State
+                  Counselling Authorities.</div>
+                <h6 class="mb-4 mt-4 fw-bold">
+                  The All India MBBS counselling process is conducted in the following rounds:
+                </h6>
 
                 <div class="journey-steps">
                   <!-- Step 1 -->
@@ -2562,976 +2355,1819 @@
                   </div>
 
                   <!-- Stray Vacancy -->
-                  <div class="j-step sv-step">
+                  <div class="j-step sv-step" id="svStep">
                     <div class="j-dot">SV</div>
                     <div class="j-label">
                       Stray Vacancy Round
+                      <svg class="sv-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                <div class="note mt-5 "><strong>Note :</strong> The Mop Up Round is conducted to fill
-                  MBBS
-                  seats that remain vacant after Round 2. If vacancies still exist after the Mop Up
-                  Round, KEA may conduct one or more Stray Vacancy Rounds in accordance with the
-                  counselling schedule, seat availability, and prevailing admission guidelines.
+
+                <div class="sv-detail" id="svDetail" style=" font-size: 15px;">
+                  The Stray Vacancy Round is conducted to fill MBBS seats that remain vacant after
+                  Round 3. This round is conducted online by MCC for participating institutions.
+                  Eligible candidates who satisfy the counselling guidelines can participate based
+                  on the applicable eligibility criteria for the Stray Vacancy Round. Seat
+                  allotment is carried out according to NEET UG merit, seat availability,
+                  reservation policies where applicable, and MCC counselling regulations.
+                  Candidates allotted a seat during this round are required to complete the
+                  admission process within the prescribed timeline set by MCC.
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- ============ ALL INDIA PROCESS — DETAILED STAGES ============ -->
+  <section id="aiq-process">
+    <div class="wrap">
+      <div class="sec-head reveal from-left">
+        <p class="eyebrow">Step By Step</p>
+        <h2>All India NEET UG MBBS Counselling 2026 Process</h2>
+        <p class="reveal text-dark">The Medical Counselling Committee (MCC) conducts the All India NEET UG
+          MBBS Counselling through a structured admission process. Although the counselling schedule and
+          dates differ for each round, the overall procedure remains largely the same. Before every
+          counselling round, MCC publishes the counselling schedule, seat matrix, and official
+          notifications on its portal.
 
-
-
-    <!-- ============ KARNATAKA PROCESS — DETAILED STAGES ============ -->
-    <section id="kea-process">
-      <div class="wrap">
-        <div class="sec-head reveal from-left">
-          <!-- <p class="eyebrow">Karnataka Counselling</p> -->
-          <h2>KEA NEET UG MBBS Counselling 2026 Stages</h2>
-          <p class="reveal text-dark">The Karnataka Examinations Authority (KEA) conducts the Karnataka MBBS
-            Counselling through a structured admission process. Candidates are required to complete each
-            stage within the prescribed timeline to remain eligible for seat allotment.
-          </p>
-        </div>
-
-        <div class="stage-timeline kea reveal">
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">1</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Online Registration</h3>
-              <p>The counselling process begins with online registration through the official KEA portal.
-                Registration is considered successful only after the application is submitted and the
-                prescribed
-                counselling fee is paid. </p>
-              <ul>During registration, candidates must:
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Complete the online application form</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Enter personal, academic and NEET UG details</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Upload required documents, wherever applicable</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Pay the counselling fee within the notified deadline</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">2</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Document Verification</h3>
-              <p>After registration, candidates must complete the document verification process according
-                to the schedule announced by KEA. During this stage, the authority verifies the
-                candidate's eligibility, reservation claims, and supporting documents. Candidates who
-                successfully complete verification become eligible to participate in the subsequent
-                stages of counselling.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">3</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Option Entry</h3>
-              <p>Verified candidates can proceed with option entry, where they select and prioritize their
-                preferred medical colleges. The order in which options are entered plays a significant
-                role in the seat allotment process.
-              </p>
-              <ul>During this stage, candidates can:
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Select their preferred MBBS colleges</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Arrange colleges in order of preference</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Add, modify, or delete options until the option entry window closes.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">4</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Mock Seat Allotment</h3>
-              <p>Before publishing the final allotment, KEA generally releases a mock seat allotment based
-                on the options entered by candidates.
-              </p>
-              <ul>The mock allotment helps candidates:
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Estimate their probable seat allotment.</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Evaluate their admission prospects.</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Revise and optimize their college preferences before the final allotment.</li>
-              </ul>
-              <p>The mock allotment is only indicative and does not guarantee the final seat allotment.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">5</div>
-              <div class="stage-line"></div>
-            </div>
-            <div class="stage-content">
-              <h3>Final Seat Allotment</h3>
-              <p>After the option entry period concludes, KEA publishes the final seat allotment results.
-                Candidates can access and download their allotment letter through the official KEA
-                portal.
-              </p>
-              <ul>Seat allotment is determined based on:
-
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>NEET UG 2026 rank</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Candidate Category</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Reservation Policy</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Availability of Seats</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Order of College Preferences</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-num-col">
-              <div class="stage-num">6</div>
-            </div>
-            <div class="stage-content">
-              <h3>Admission Confirmation</h3>
-              <p>Candidates who are allotted an MBBS seat must complete all admission formalities within
-                the prescribed reporting period. Failure to do so may result in cancellation of the
-                allotted seat as per KEA guidelines.
-              </p>
-              <ul>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Exercising the appropriate admission option notified by KEA.</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Payment of the prescribed admission fees.
-                </li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Reporting to the allotted medical college.
-                </li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>Submission of original documents and completion of admission formalities.
-                </li>
-              </ul>
-              <div class="stage-note"><strong>Note :</strong> KEA follows a merit based seat allotment
-                process that considers NEET UG rank, reservation policies, category wise seat
-                availability, and the candidate's order of preferences. The complete allotment
-                methodology is published in the official UGNEET Information Bulletin for the respective
-                admission year.</div>
-            </div>
-          </div>
-        </div>
+        </p>
       </div>
-    </section>
 
-    <!-- ============ DOCUMENTS CHECKLIST ============ -->
-    <section id="documents">
-      <div class="wrap">
-        <div class="sec-head reveal from-left">
-          <!-- <p class="eyebrow">Checklist</p> -->
-          <h2>MBBS Counselling Documents Required for 2026</h2>
-          <p class="reveal text-dark">Candidates participating in the NEET UG MBBS Counselling 2026 should
-            keep the following original documents along with multiple sets of self attested photocopies
-            ready for document verification and admission.
-          </p>
-        </div>
-        <div class="table-card doc-card reveal">
-          <ul class="doc-list">
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Class 10 Marks Card or Certificate (Proof of Date of Birth)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Class 12 Marks Card or Equivalent Qualifying Examination Certificate</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>NEET UG 2026 Admit Card</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>NEET UG 2026 Scorecard</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>NEET UG 2026 Rank Letter (If Issued)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>NEET UG 2026 Application Form Confirmation Page</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Provisional Seat Allotment Letter</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Valid Government Issued Photo Identity Proof (Aadhaar Card, PAN Card, Passport, Voter
-              ID, or Driving Licence)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Recent Passport Size Photographs</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Transfer Certificate (TC)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Character Certificate</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Migration Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Medical Fitness Certificate (If Required by the Allotted Institution)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Domicile Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Caste Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Income Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Economically Weaker Section (EWS) Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Persons with Benchmark Disabilities (PwBD) Certificate (If Applicable)</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>Non Creamy Layer (NCL) Certificate for OBC Candidates (If Applicable)</li>
-          </ul>
-          <div class="table-foot">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 8v5l3 3" />
-            </svg>
-            <p style="color: #081e72; font-size: 14px;"><strong>Note :</strong> The documents required for
-              admission may vary depending on the counselling authority,
-              such as the Medical Counselling Committee (MCC) or the respective State Counselling
-              Authority,
-              the allotted medical college, and the candidate's reservation category. Candidates should
-              carefully review the latest official counselling notification issued by the concerned
-              authority
-              before reporting for admission.</p>
-
+      <div class="stage-timeline reveal">
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">1</div>
+            <div class="stage-line"></div>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="stage-content">
+            <h3>Online Registration</h3>
+            <p>Candidates who wish to participate in the All India MBBS Counselling must complete the
+              online registration within the specified dates for the respective counselling round.
+              Fresh registration may be required for eligible counselling rounds as per the guidelines
+              issued by MCC for the academic year 2026.
 
-    <!-- ============ RANK PREDICTOR ============ -->
-    <section id="predictor">
-      <div class="wrap">
-        <div class="predictor">
-          <div class="row g-4 g-lg-5 align-items-center">
-            <div class="col-lg-6 predictor-copy reveal from-left">
-              <p class="eyebrow">Know Your Rank</p>
-              <h2>NEET UG <span class="hl" style="color:#fff5ad;">2026 Rank Predictor</span></h2>
-              <h6 class="fw-bold">Estimate Your Expected NEET UG Rank Before the Results</h6>
-              <p class="reveal mt-4">Get an estimate of your NEET UG 2026 rank using the NTA Provisional
-                Answer
-                Key and your expected score. Knowing your probable rank early can help you evaluate your
-                chances of securing an MBBS seat through All India and State Counselling.
-                <br><br>
-                Use your predicted rank to shortlist medical colleges, understand your admission
-                possibilities, and plan your counselling strategy before the official results are
-                announced.
-              </p>
-
-              <div class="stage-note" style="border: 2px solid rgb(237, 247, 255); font-size: 14px;">
-                <strong>Note :</strong> This prediction is based on previous years'
-                NEET UG data, candidate trends, and the responses entered by you. The estimated score
-                and rank are indicative only and may vary from the final NEET UG 2026 results declared
-                by the National Testing Agency (NTA).
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="predictor-card reveal">
-                <div id="predictorFormWrap">
-                  <h4 class="text-center fs-5 mb-4" style="color: #081e72;">Calculate Your Expected NEET UG <span
-                      style=" font-weight: 800; text-decoration: underline; color: #df9a2c;">2026</span> Rank</h4>
-                  <form id="rankForm" novalidate>
-
-                    <div class="row g-3">
-                      <div class="col-sm-6 field">
-                        <style>
-                          .red-validation {
-                            color: rgb(200, 0, 0);
-                          }
-                        </style>
-                        <label for="rankAttempted">Questions Attempted
-                          <span class="red-validation">*</span></label>
-                        <input type="tel" id="rankAttempted" placeholder="e.g. 170" inputmode="numeric"
-                          autocomplete="off">
-                        <div class="err" id="rankAttemptedErr"></div>
-                      </div>
-                      <div class="col-sm-6 field">
-                        <label for="rankCorrect">Correct Answers <span class="red-validation">*</span></label>
-                        <input type="tel" id="rankCorrect" placeholder="e.g. 150" inputmode="numeric"
-                          autocomplete="off">
-                        <div class="err" id="rankCorrectErr"></div>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <label for="rankCategory">Category <span class="red-validation">*</span></label>
-                      <select id="rankCategory">
-                        <option value="">Select your category</option>
-                        <option>General</option>
-                        <option>EWS</option>
-                        <option>OBC-NCL</option>
-                        <option>SC</option>
-                        <option>ST</option>
-                        <option>PwD</option>
-                      </select>
-                      <div class="err" id="rankCategoryErr"></div>
-                    </div>
-                    <div class="field">
-                      <label for="rankDomicile">Domicile State <span
-                          class="BamsPage-module__yO387G__req">*</span></label>
-                      <select id="rankDomicile">
-                        <option value="">Select your domicile state</option>
-                        <option selected>Karnataka</option>
-                        <option>Andhra Pradesh</option>
-                        <option>Delhi</option>
-                        <option>Gujarat</option>
-                        <option>Kerala</option>
-                        <option>Maharashtra</option>
-                        <option>Tamil Nadu</option>
-                        <option>Telangana</option>
-                        <option>Uttar Pradesh</option>
-                        <option>Other State</option>
-                      </select>
-                      <div class="err" id="rankDomicileErr"></div>
-                    </div>
-                    <div class="field">
-                      <label for="rankQuota">Quota Preference <span
-                          class="BamsPage-module__yO387G__req">*</span></label>
-                      <select id="rankQuota">
-                        <option value="">Select your quota preference</option>
-                        <option>15% All India Quota</option>
-                        <option>85% Karnataka State Quota</option>
-                        <option>Deemed University</option>
-                        <option>Management / NRI Quota</option>
-                      </select>
-                      <div class="err" id="rankQuotaErr"></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Predict My Rank</button>
-                  </form>
-                </div>
-
-                <div class="predictor-result" id="predictorResult">
-                  <div class="ring-wrap">
-                    <svg width="164" height="164" viewBox="0 0 160 160">
-                      <circle class="ring-bg" cx="80" cy="80" r="70" />
-                      <circle class="ring-fg" id="ringFg" cx="80" cy="80" r="70" />
-                    </svg>
-                    <div class="ring-center">
-                      <span class="marks" id="marksOut">0</span>
-                      <span class="marks-of">/ 720 marks</span>
-                    </div>
-                  </div>
-                  <div class="rank-range" id="rankRangeOut">—</div>
-                  <div class="rank-label">Estimated All‑India rank range</div>
-                  <p class="disclaimer">Based on previous years' NEET‑UG results and exam analysis.
-                    Treat this
-                    as a starting point for choice filling, not a guarantee — an actual counsellor
-                    call will
-                    sharpen this further.</p>
-                  <button class="predictor-reset" id="predictorReset">Predict again</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ COLLEGES ============ -->
-    <section id="colleges">
-      <div class="wrap">
-        <div class="colleges-head">
-          <div class="sec-head reveal from-left" style="margin-bottom:0;">
-            <p class="eyebrow">Reputable Institutions</p>
-            <h2>Top MBBS Colleges in Karnataka</h2>
-            <p class="reveal text-dark">Candidates participating in NEET UG Counselling for MBBS in 2026 can
-              secure admission to some of the leading government and private medical colleges in Karnataka
-              through the Medical Counselling Committee (MCC) for the 15% All India Quota and through the
-              Karnataka Examinations Authority (KEA) for State Quota, Private Quota, Management Quota, and
-              NRI Quota seats.
-              <br><br>
-              Choosing the right colleges during the Choice Filling stage is one of the most important
-              aspects of the counselling process. Reviewing the colleges in advance can help you
-              prioritise your preferences based on factors such as location, fee structure,
-              infrastructure, clinical exposure, and seat availability.
             </p>
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 reveal">
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Ramaiah.webp"
-                  alt="Ramaiah Medical College (RMC)" loading="lazy"></div>
-              <div class="body">
-                <h4>Ramaiah Medical College (RMC)</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">2</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Payment of Counselling Fees</h3>
+            <p>After successful registration, candidates must pay the applicable counselling fee through
+              the
+              online payment gateway. The fee has two parts — a non‑refundable registration fee and a
+              refundable
+              security deposit.</p>
+            <ul class="fee-list">
+              <li>Non-refundable Registration Fee</li>
+              <li>Refundable Security Deposit</li>
+            </ul>
+
+            <style>
+              .fee-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              }
+
+              .fee-list li {
+                position: relative;
+                padding-left: 26px;
+                margin-bottom: 10px;
+                color: var(--ink);
+              }
+
+              .fee-list li::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: var(--brand);
+                font-weight: 700;
+              }
+            </style>
+
+            <h6 class="fw-bold">Fee Structure :</h6>
+
+            <div class="fee-table-wrap">
+              <div class="table-scroll">
+                <table class="dates fee-table">
+                  <thead>
+                    <tr>
+                      <th>Counselling Category</th>
+                      <th>Candidate Category</th>
+                      <th>Registration Fee</th>
+                      <th>Refundable Security Deposit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>15% All India Quota, Central Universities</th>
+                      <td>General, EWS, OBC</td>
+                      <td>₹1,000</td>
+                      <td>₹10,000</td>
+                    </tr>
+                    <tr>
+                      <th>15% All India Quota, Central Universities</th>
+                      <td>SC, ST, PwBD</td>
+                      <td>₹500</td>
+                      <td>₹5,000</td>
+                    </tr>
+                    <tr>
+                      <th>Deemed Universities</th>
+                      <td>All Categories</td>
+                      <td>₹5,000</td>
+                      <td>₹2,00,000</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
+              <p class="table-hint fee-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M9 6l6 6-6 6" />
+                </svg> Swipe to see all columns</p>
+            </div>
+            <div class="stage-note"><strong>Note:</strong> Candidates opting for both All India Quota
+              and Deemed
+              University counselling must pay the applicable fee for Deemed University participation.
             </div>
           </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Kempegowda.webp"
-                  alt="Kempegowda Institute of Medical Sciences (KIMS)" loading="lazy"></div>
-              <div class="body">
-                <h4>Kempegowda Institute of Medical Sciences (KIMS)</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">3</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Choice Filling</h3>
+            <p>Registered candidates can select their preferred medical colleges and arrange them in the
+              order of priority. During the choice filling period, candidates can add, remove, modify,
+              or reorder their preferences until the deadline. Choice filling is conducted separately
+              for every counselling round, and fresh choices must be submitted unless otherwise
+              notified by MCC.
+            </p>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">4</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Choice Locking</h3>
+            <p>After finalizing the list of preferred colleges, candidates must lock their choices
+              before the specified deadline. Once the choices are locked, they cannot be edited for
+              that counselling round. If candidates do not manually lock their choices, MCC may
+              automatically lock the last saved preferences after the choice locking window closes.
+            </p>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">5</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Seat Allotment</h3>
+            <p>Seat allotment is carried out based on several factors, including:</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>NEET UG 2026 rank</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Candidate category</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Reservation policy</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Seat availability</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Order of college Preferences</li>
+            </ul>
+            <p>Candidates who are not allotted a seat in one round may participate in subsequent
+              counselling rounds, subject to the eligibility criteria prescribed by MCC.
+            </p>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">6</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Seat Allotment Result</h3>
+            <p>Once the allotment process is completed, MCC publishes the seat allotment result on its
+              official website. Candidates who receive a seat can download their allotment letter and
+              proceed with the admission process.
+            </p>
+            <div class="stage-note"><strong>Note:</strong> MCC may release a provisional seat allotment
+              result before publishing the final allotment list whenever required.
             </div>
           </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/BGS.webp"
-                  alt="BGS Global Institute of Medical Sciences" loading="lazy"></div>
-              <div class="body">
-                <h4>BGS Global Institute of Medical Sciences</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">7</div>
           </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/RajaRajeswari.webp"
-                  alt="RajaRajeswari Medical College & Hospital" loading="lazy"></div>
-              <div class="body">
-                <h4>RajaRajeswari Medical College &amp; Hospital</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Vydehi.webp"
-                  alt="Vydehi Institute of Medical Sciences & Research Centre" loading="lazy"></div>
-              <div class="body">
-                <h4>Vydehi Institute of Medical Sciences &amp; Research Centre</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Dr.webp"
-                  alt="Dr. B.R. Ambedkar Medical College" loading="lazy"></div>
-              <div class="body">
-                <h4>Dr. B.R. Ambedkar Medical College</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Sapthagiri.webp"
-                  alt="Sapthagiri Institute of Medical Sciences & Research Centre (SIMSRC)" loading="lazy"></div>
-              <div class="body">
-                <h4>Sapthagiri Institute of Medical Sciences &amp; Research Centre (SIMSRC)</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/MVJ.webp"
-                  alt="M.V.J Medical College & Research Hospital" loading="lazy"></div>
-              <div class="body">
-                <h4>M.V.J Medical College &amp; Research Hospital</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/AkashInstitute.webp"
-                  alt="Akash Institute of Medical Sciences & Research Centre" loading="lazy"></div>
-              <div class="body">
-                <h4>Akash Institute of Medical Sciences &amp; Research Centre</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Bangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Yenepoya.webp"
-                  alt="Yenepoya Medical College (YMC)" loading="lazy"></div>
-              <div class="body">
-                <h4>Yenepoya Medical College (YMC)</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Mangalore</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/SDM.webp"
-                  alt="SDM College of Medical Sciences & Hospital" loading="lazy"></div>
-              <div class="body">
-                <h4>SDM College of Medical Sciences &amp; Hospital</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Dharwad</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img
-                  src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/AI.webp"
-                  alt="Al-Ameen Medical College (AMCH)" loading="lazy"></div>
-              <div class="body">
-                <h4>Al‑Ameen Medical College (AMCH)</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Vijayapura</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card">
-              <div class="img-wrap"><img src="clg-img/Devaraj.webp" alt="Devaraj College" loading="lazy"></div>
-              <div class="body">
-                <h4>Sri Devaraj Urs Medical College (SDUMC), Kolar</h4>
-                <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>Kolar</p>
-                <a href="#lead-form" class="enquire">Enquire Now <svg width="13" height="13" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="college-card more">
-              <div class="body">
-                <h4>&amp; Many More!</h4>
-              </div>
-            </div>
+          <div class="stage-content">
+            <h3>Reporting to the Allotted College</h3>
+            <p>Candidates allotted an MBBS seat must report to the respective medical college within the
+              prescribed reporting period. Failure to report within the stipulated deadline may result
+              in cancellation of the allotted seat as per the counselling regulations.
+            </p>
+            <ul>The admission process at the allotted college generally includes:
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Document Verification</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Submission of Original Documents</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Payment of Admission Fees</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Completion of College Admission Formalities</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- ============ FAQ ================== -->
+  <section class="mini-action">
+    <div class="container">
+      <div class="mini-action-box">
 
-    <section class="faq-section section-padding">
-      <div class="container">
-        <div class="colleges-head text-center">
-          <div class="sec-head reveal from-left" style="margin-bottom:0;">
-            <div class="faq-eyebrow">Frequently Asked Questions</div>
-            <h2>Frequently Asked Questions</h2>
-          </div>
+        <div class="mini-action-content">
+          <h2>
+            One Goal. One MBBS Seat.
+            <span>Expert counselling tailored to your NEET UG rank</span>
+          </h2>
         </div>
 
-        <div class="faq-wrapper">
-          <div class="faq-item active">
-            <button class="faq-question">
-              <span>Should I participate in both MCC and State MBBS counselling?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Yes, if you are eligible, participating in both the Medical Counselling Committee (MCC) counselling and
-                your respective State Counselling Authority can significantly improve your chances of securing an MBBS
-                seat. Since each counselling process has separate registrations, schedules, and seat pools, applying for
-                both gives you access to more admission opportunities.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> How should I prioritise MBBS colleges during the choice filling process?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Your choice filling strategy should be based on factors such as your NEET UG 2026 rank, previous years'
-                closing ranks, tuition fees, location, hospital infrastructure, clinical exposure, internship
-                opportunities, and preferred quota. Arranging colleges strategically in the order of your preference can
-                improve your chances of securing a seat that aligns with your academic and career goals.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can I upgrade my allotted MBBS seat in the next counselling round?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Yes, depending on the counselling authority's guidelines and your eligibility, you may choose to
-                participate in subsequent rounds for an upgrade. If a higher preferred college becomes available based
-                on your rank and preferences, your allotted seat may be upgraded during the next round of counselling.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What happens if I do not report to the allotted medical college?</span>
-              <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Candidates who fail to report to the allotted medical college within the prescribed reporting period
-                may lose their allotted seat. Depending on the counselling authority and the stage of counselling, such
-                candidates may also forfeit their security deposit or become ineligible for certain subsequent
-                counselling rounds. Candidates should always follow the reporting schedule notified by the concerned
-                counselling authority.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>How can personalised MBBS counselling help improve my admission chances?
-              </span>
-              <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Personalised MBBS counselling provides guidance throughout the admission process, including college
-                shortlisting, choice filling strategy, quota selection, counselling registration, document preparation,
-                seat allotment decisions, and admission formalities. The guidance is tailored to your NEET UG rank,
-                category, budget, preferred colleges, and career aspirations, helping you make informed decisions during
-                every stage of counselling.
-
-              </p>
-            </div>
-          </div>
+        <div class="mini-action-btn">
+          <a href="#lead-form" class="btn btn-primary-action">
+            Enquire Now
+            <span>→</span>
+          </a>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <style>
-      .faq-section {
-        background: #ffffff;
+  <style>
+    /* ===============================
+   MINI CTA
+================================ */
+
+    .mini-action {
+      padding: 40px 0;
+    }
+
+    .mini-action-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px 20px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e1edfd 0%, #EEF5FF 50%, #d3e5ff 100%);
+    }
+
+    .mini-action-box::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -90px;
+      top: -120px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(255, 255, 255, .12),
+          transparent 70%);
+    }
+
+    .mini-action-box::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 24px;
+      border: 2px solid rgba(0, 30, 71, 0.103);
+      pointer-events: none;
+
+    }
+
+    /* TEXT */
+
+    .mini-action-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mini-action-content h2 {
+      margin: 0;
+      text-align: center;
+
+      color: #0e0d0d;
+      font-size: 40px;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    .mini-action-content h2 span {
+      display: block;
+      margin-top: 12px;
+
+      text-align: center;
+
+      font-size: 17px;
+      color: rgb(0, 57, 95);
+    }
+
+    .mini-action-btn {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* BUTTON */
+
+    .btn-primary-action {
+
+      position: relative;
+      z-index: 2;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+      border: 2px solid rgba(233, 233, 255, 0.637);
+      background: #fff;
+
+      color: #071B4D;
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition: .35s ease;
+
+    }
+
+    .btn-primary-action span {
+
+      width: 36px;
+      height: 36px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #071B4D;
+
+      color: #fff;
+
+      transition: .35s;
+
+    }
+
+    .btn-primary-action:hover {
+      background-color: white;
+      transform: translateY(-4px);
+
+      color: #071B4D;
+
+    }
+
+    .btn-primary-action:hover span {
+
+      transform: translateX(5px);
+
+    }
+
+    /* ===============================
+   TABLET
+================================ */
+
+    @media(max-width:991px) {
+
+      .mini-action-box {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 40px 30px;
+
       }
 
-      .faq-eyebrow {
-        display: flex;
+      .mini-action-content h2 {
+
+        font-size: 36px;
+
+      }
+
+    }
+
+    /* ===============================
+   MOBILE
+================================ */
+
+    @media(max-width:767px) {
+
+      .mini-action {
+
+        padding: 50px 0;
+
+      }
+
+      .mini-action-box {
+
+        padding: 30px 22px;
+
+        border-radius: 22px;
+
+        gap: 25px;
+
+      }
+
+      .mini-action-content h2 {
+
+        font-size: 28px;
+
+        line-height: 1.15;
+
+      }
+
+      .mini-action-content h2 span {
+
+        font-size: 15px;
+
+        margin-top: 10px;
+
+      }
+
+      .btn-primary-action {
+
+        width: 100%;
+
         justify-content: center;
-        align-items: center;
-        gap: 10px;
 
-        margin: 0 auto 16px;
-
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: .05em;
-        text-transform: uppercase;
-        color: var(--brand);
       }
 
-      .faq-eyebrow::before {
-        content: "";
-        width: 24px;
-        height: 2px;
-        border-radius: 999px;
-        background: var(--brand);
-      }
+    }
+  </style>
 
-      .faq-wrapper {
-        max-width: 900px;
-        margin: auto;
-      }
+  <section>
+    <div class="wrap">
+      <div class="panel kea">
+        <div class="row g-0">
+          <div class="col-lg-3">
+            <div class="panel-side reveal from-left">
+              <div> <span class="authority-logo"><img
+                    src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Kealogo.webp"
+                    alt="KEA logo" loading="lazy"></span>
+                <h3>Karnataka MBBS Counselling <span style="color: #f1cafc; font-weight: 800;">2026</span> Process
+                </h3>
+              </div>
+              <p class="who">Conducted by the Karnataka Examinations Authority</p>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="panel-body reveal">
+              The Karnataka Examinations Authority (KEA) conducts the Karnataka MBBS Counselling for
+              admission to medical colleges across the state. Candidates must qualify NEET UG 2026 and
+              complete the KEA counselling registration to participate in the admission process. KEA
+              conducts counselling for admission to Government Quota, Private Quota, Management Quota,
+              and NRI Quota MBBS seats offered by Government and Private Medical Colleges in
+              Karnataka.
+              <br> <br>
+              To participate in the counselling process, candidates must register through the official
+              KEA counselling portal, complete document verification, and fulfil all prescribed
+              admission requirements within the notified schedule. The Karnataka MBBS Counselling
+              process is expected to be conducted in the following rounds:
 
-      .faq-item {
-        background: #fff;
-        border-bottom: 2px solid #e7ebf3;
-        border-radius: 16px;
-        margin-bottom: 16px;
-        overflow: hidden;
-        transition: .3s ease;
-      }
+              <div class="journey-steps">
+                <!-- Step 1 -->
+                <div class="j-step">
+                  <div class="j-line"></div>
+                  <div class="j-dot">1</div>
+                  <div class="j-label">Round 1</div>
+                </div>
 
-      .faq-item:hover {
-        box-shadow: 0 12px 30px rgba(16, 24, 40, .06);
-      }
+                <!-- Step 2 -->
+                <div class="j-step">
+                  <div class="j-line"></div>
+                  <div class="j-dot">2</div>
+                  <div class="j-label">Round 2</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="j-step">
+                  <div class="j-line"></div>
+                  <div class="j-dot">3</div>
+                  <div class="j-label">Round 3</div>
+                </div>
+
+                <!-- Stray Vacancy -->
+                <div class="j-step sv-step">
+                  <div class="j-dot">SV</div>
+                  <div class="j-label">
+                    Stray Vacancy Round
+                  </div>
+                </div>
+              </div>
+              <div class="note mt-5 "><strong>Note :</strong> The Mop Up Round is conducted to fill
+                MBBS
+                seats that remain vacant after Round 2. If vacancies still exist after the Mop Up
+                Round, KEA may conduct one or more Stray Vacancy Rounds in accordance with the
+                counselling schedule, seat availability, and prevailing admission guidelines.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ============ KARNATAKA PROCESS — DETAILED STAGES ============ -->
+  <section id="kea-process">
+    <div class="wrap">
+      <div class="sec-head reveal from-left">
+        <!-- <p class="eyebrow">Karnataka Counselling</p> -->
+        <h2>KEA NEET UG MBBS Counselling 2026 Stages</h2>
+        <p class="reveal text-dark">The Karnataka Examinations Authority (KEA) conducts the Karnataka MBBS
+          Counselling through a structured admission process. Candidates are required to complete each
+          stage within the prescribed timeline to remain eligible for seat allotment.
+        </p>
+      </div>
+
+      <div class="stage-timeline kea reveal">
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">1</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Online Registration</h3>
+            <p>The counselling process begins with online registration through the official KEA portal.
+              Registration is considered successful only after the application is submitted and the
+              prescribed
+              counselling fee is paid. </p>
+            <ul>During registration, candidates must:
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Complete the online application form</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Enter personal, academic and NEET UG details</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Upload required documents, wherever applicable</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Pay the counselling fee within the notified deadline</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">2</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Document Verification</h3>
+            <p>After registration, candidates must complete the document verification process according
+              to the schedule announced by KEA. During this stage, the authority verifies the
+              candidate's eligibility, reservation claims, and supporting documents. Candidates who
+              successfully complete verification become eligible to participate in the subsequent
+              stages of counselling.
+            </p>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">3</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Option Entry</h3>
+            <p>Verified candidates can proceed with option entry, where they select and prioritize their
+              preferred medical colleges. The order in which options are entered plays a significant
+              role in the seat allotment process.
+            </p>
+            <ul>During this stage, candidates can:
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Select their preferred MBBS colleges</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Arrange colleges in order of preference</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Add, modify, or delete options until the option entry window closes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">4</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Mock Seat Allotment</h3>
+            <p>Before publishing the final allotment, KEA generally releases a mock seat allotment based
+              on the options entered by candidates.
+            </p>
+            <ul>The mock allotment helps candidates:
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Estimate their probable seat allotment.</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Evaluate their admission prospects.</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Revise and optimize their college preferences before the final allotment.</li>
+            </ul>
+            <p>The mock allotment is only indicative and does not guarantee the final seat allotment.
+            </p>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">5</div>
+            <div class="stage-line"></div>
+          </div>
+          <div class="stage-content">
+            <h3>Final Seat Allotment</h3>
+            <p>After the option entry period concludes, KEA publishes the final seat allotment results.
+              Candidates can access and download their allotment letter through the official KEA
+              portal.
+            </p>
+            <ul>Seat allotment is determined based on:
+
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>NEET UG 2026 rank</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Candidate Category</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Reservation Policy</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Availability of Seats</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Order of College Preferences</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stage-item">
+          <div class="stage-num-col">
+            <div class="stage-num">6</div>
+          </div>
+          <div class="stage-content">
+            <h3>Admission Confirmation</h3>
+            <p>Candidates who are allotted an MBBS seat must complete all admission formalities within
+              the prescribed reporting period. Failure to do so may result in cancellation of the
+              allotted seat as per KEA guidelines.
+            </p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Exercising the appropriate admission option notified by KEA.</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Payment of the prescribed admission fees.
+              </li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Reporting to the allotted medical college.
+              </li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>Submission of original documents and completion of admission formalities.
+              </li>
+            </ul>
+            <div class="stage-note"><strong>Note :</strong> KEA follows a merit based seat allotment
+              process that considers NEET UG rank, reservation policies, category wise seat
+              availability, and the candidate's order of preferences. The complete allotment
+              methodology is published in the official UGNEET Information Bulletin for the respective
+              admission year.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENTS CHECKLIST ============ -->
+  <section id="documents">
+    <div class="wrap">
+      <div class="sec-head reveal from-left">
+        <!-- <p class="eyebrow">Checklist</p> -->
+        <h2>MBBS Counselling Documents Required for 2026</h2>
+        <p class="reveal text-dark">Candidates participating in the NEET UG MBBS Counselling 2026 should
+          keep the following original documents along with multiple sets of self attested photocopies
+          ready for document verification and admission.
+        </p>
+      </div>
+      <div class="table-card doc-card reveal">
+        <ul class="doc-list">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Class 10 Marks Card or Certificate (Proof of Date of Birth)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Class 12 Marks Card or Equivalent Qualifying Examination Certificate</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>NEET UG 2026 Admit Card</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>NEET UG 2026 Scorecard</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>NEET UG 2026 Rank Letter (If Issued)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>NEET UG 2026 Application Form Confirmation Page</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Provisional Seat Allotment Letter</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Valid Government Issued Photo Identity Proof (Aadhaar Card, PAN Card, Passport, Voter
+            ID, or Driving Licence)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Recent Passport Size Photographs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Transfer Certificate (TC)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Character Certificate</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Migration Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Medical Fitness Certificate (If Required by the Allotted Institution)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Domicile Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Caste Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Income Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Economically Weaker Section (EWS) Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Persons with Benchmark Disabilities (PwBD) Certificate (If Applicable)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>Non Creamy Layer (NCL) Certificate for OBC Candidates (If Applicable)</li>
+        </ul>
+        <div class="table-foot">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 8v5l3 3" />
+          </svg>
+          <p style="color: #081e72; font-size: 14px;"><strong>Note :</strong> The documents required for
+            admission may vary depending on the counselling authority,
+            such as the Medical Counselling Committee (MCC) or the respective State Counselling
+            Authority,
+            the allotted medical college, and the candidate's reservation category. Candidates should
+            carefully review the latest official counselling notification issued by the concerned
+            authority
+            before reporting for admission.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RANK PREDICTOR ============ -->
+  <section id="predictor">
+    <div class="wrap">
+      <div class="predictor">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-6 predictor-copy reveal from-left">
+            <p class="eyebrow">Know Your Rank</p>
+            <h2>NEET UG <span class="hl" style="color:#fff5ad;">2026 Rank Predictor</span></h2>
+            <h6 class="fw-bold">Estimate Your Expected NEET UG Rank Before the Results</h6>
+            <p class="reveal mt-4">Get an estimate of your NEET UG 2026 rank using the NTA Provisional
+              Answer
+              Key and your expected score. Knowing your probable rank early can help you evaluate your
+              chances of securing an MBBS seat through All India and State Counselling.
+              <br><br>
+              Use your predicted rank to shortlist medical colleges, understand your admission
+              possibilities, and plan your counselling strategy before the official results are
+              announced.
+            </p>
+
+            <div class="stage-note" style="border: 2px solid rgb(237, 247, 255); font-size: 14px;">
+              <strong>Note :</strong> This prediction is based on previous years'
+              NEET UG data, candidate trends, and the responses entered by you. The estimated score
+              and rank are indicative only and may vary from the final NEET UG 2026 results declared
+              by the National Testing Agency (NTA).
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="predictor-card reveal">
+              <div id="predictorFormWrap">
+                <h4 class="text-center fs-5 mb-4" style="color: #081e72;">Calculate Your Expected NEET UG <span
+                    style=" font-weight: 800; text-decoration: underline; color: #df9a2c;">2026</span> Rank</h4>
+                <form id="rankForm" novalidate>
+
+                  <div class="row g-3">
+                    <div class="col-sm-6 field">
+                      <style>
+                        .red-validation {
+                          color: rgb(200, 0, 0);
+                        }
+                      </style>
+                      <label for="rankAttempted">Questions Attempted
+                        <span class="red-validation">*</span></label>
+                      <input type="tel" id="rankAttempted" placeholder="e.g. 170" inputmode="numeric"
+                        autocomplete="off">
+                      <div class="err" id="rankAttemptedErr"></div>
+                    </div>
+                    <div class="col-sm-6 field">
+                      <label for="rankCorrect">Correct Answers <span class="red-validation">*</span></label>
+                      <input type="tel" id="rankCorrect" placeholder="e.g. 150" inputmode="numeric" autocomplete="off">
+                      <div class="err" id="rankCorrectErr"></div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="rankCategory">Category <span class="red-validation">*</span></label>
+                    <select id="rankCategory">
+                      <option value="">Select your category</option>
+                      <option>General</option>
+                      <option>EWS</option>
+                      <option>OBC-NCL</option>
+                      <option>SC</option>
+                      <option>ST</option>
+                      <option>PwD</option>
+                    </select>
+                    <div class="err" id="rankCategoryErr"></div>
+                  </div>
+                  <div class="field">
+                    <label for="rankDomicile">Domicile State <span class="BamsPage-module__yO387G__req">*</span></label>
+                    <select id="rankDomicile">
+                      <option value="">Select your domicile state</option>
+                      <option selected>Karnataka</option>
+                      <option>Andhra Pradesh</option>
+                      <option>Delhi</option>
+                      <option>Gujarat</option>
+                      <option>Kerala</option>
+                      <option>Maharashtra</option>
+                      <option>Tamil Nadu</option>
+                      <option>Telangana</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Other State</option>
+                    </select>
+                    <div class="err" id="rankDomicileErr"></div>
+                  </div>
+                  <div class="field">
+                    <label for="rankQuota">Quota Preference <span class="BamsPage-module__yO387G__req">*</span></label>
+                    <select id="rankQuota">
+                      <option value="">Select your quota preference</option>
+                      <option>15% All India Quota</option>
+                      <option>85% Karnataka State Quota</option>
+                      <option>Deemed University</option>
+                      <option>Management / NRI Quota</option>
+                    </select>
+                    <div class="err" id="rankQuotaErr"></div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">Predict My Rank</button>
+                </form>
+              </div>
+
+              <div class="predictor-result" id="predictorResult">
+                <div class="ring-wrap">
+                  <svg width="164" height="164" viewBox="0 0 160 160">
+                    <circle class="ring-bg" cx="80" cy="80" r="70" />
+                    <circle class="ring-fg" id="ringFg" cx="80" cy="80" r="70" />
+                  </svg>
+                  <div class="ring-center">
+                    <span class="marks" id="marksOut">0</span>
+                    <span class="marks-of">/ 720 marks</span>
+                  </div>
+                </div>
+                <div class="rank-range" id="rankRangeOut">—</div>
+                <div class="rank-label">Estimated All‑India rank range</div>
+                <p class="disclaimer">Based on previous years' NEET‑UG results and exam analysis.
+                  Treat this
+                  as a starting point for choice filling, not a guarantee — an actual counsellor
+                  call will
+                  sharpen this further.</p>
+                <button class="predictor-reset" id="predictorReset">Predict again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLLEGES ============ -->
+  <section id="colleges">
+    <div class="wrap">
+      <div class="colleges-head">
+        <div class="sec-head reveal from-left" style="margin-bottom:0;">
+          <p class="eyebrow">Reputable Institutions</p>
+          <h2>Top MBBS Colleges in Karnataka</h2>
+          <p class="reveal text-dark">Candidates participating in NEET UG Counselling for MBBS in 2026 can
+            secure admission to some of the leading government and private medical colleges in Karnataka
+            through the Medical Counselling Committee (MCC) for the 15% All India Quota and through the
+            Karnataka Examinations Authority (KEA) for State Quota, Private Quota, Management Quota, and
+            NRI Quota seats.
+            <br><br>
+            Choosing the right colleges during the Choice Filling stage is one of the most important
+            aspects of the counselling process. Reviewing the colleges in advance can help you
+            prioritise your preferences based on factors such as location, fee structure,
+            infrastructure, clinical exposure, and seat availability.
+          </p>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 reveal">
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Ramaiah.webp"
+                alt="Ramaiah Medical College (RMC)" loading="lazy"></div>
+            <div class="body">
+              <h4>Ramaiah Medical College (RMC)</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Kempegowda.webp"
+                alt="Kempegowda Institute of Medical Sciences (KIMS)" loading="lazy"></div>
+            <div class="body">
+              <h4>Kempegowda Institute of Medical Sciences (KIMS)</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/BGS.webp"
+                alt="BGS Global Institute of Medical Sciences" loading="lazy"></div>
+            <div class="body">
+              <h4>BGS Global Institute of Medical Sciences</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/RajaRajeswari.webp"
+                alt="RajaRajeswari Medical College & Hospital" loading="lazy"></div>
+            <div class="body">
+              <h4>RajaRajeswari Medical College &amp; Hospital</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Vydehi.webp"
+                alt="Vydehi Institute of Medical Sciences & Research Centre" loading="lazy"></div>
+            <div class="body">
+              <h4>Vydehi Institute of Medical Sciences &amp; Research Centre</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Dr.webp"
+                alt="Dr. B.R. Ambedkar Medical College" loading="lazy"></div>
+            <div class="body">
+              <h4>Dr. B.R. Ambedkar Medical College</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Sapthagiri.webp"
+                alt="Sapthagiri Institute of Medical Sciences & Research Centre (SIMSRC)" loading="lazy"></div>
+            <div class="body">
+              <h4>Sapthagiri Institute of Medical Sciences &amp; Research Centre (SIMSRC)</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/MVJ.webp"
+                alt="M.V.J Medical College & Research Hospital" loading="lazy"></div>
+            <div class="body">
+              <h4>M.V.J Medical College &amp; Research Hospital</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/AkashInstitute.webp"
+                alt="Akash Institute of Medical Sciences & Research Centre" loading="lazy"></div>
+            <div class="body">
+              <h4>Akash Institute of Medical Sciences &amp; Research Centre</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Bangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/Yenepoya.webp"
+                alt="Yenepoya Medical College (YMC)" loading="lazy"></div>
+            <div class="body">
+              <h4>Yenepoya Medical College (YMC)</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Mangalore</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/SDM.webp"
+                alt="SDM College of Medical Sciences & Hospital" loading="lazy"></div>
+            <div class="body">
+              <h4>SDM College of Medical Sciences &amp; Hospital</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Dharwad</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img
+                src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/AI.webp"
+                alt="Al-Ameen Medical College (AMCH)" loading="lazy"></div>
+            <div class="body">
+              <h4>Al‑Ameen Medical College (AMCH)</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Vijayapura</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card">
+            <div class="img-wrap"><img src="clg-img/Devaraj.webp" alt="Devaraj College" loading="lazy"></div>
+            <div class="body">
+              <h4>Sri Devaraj Urs Medical College (SDUMC), Kolar</h4>
+              <p class="loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Kolar</p>
+              <a href="#lead-form" class="enquire">
+                Enquire Now
+                <span class="arrow-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="college-card more">
+            <div class="body">
+              <h4>&amp; Many More!</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FAQ ================== -->
+
+  <section class="faq-section section-padding">
+    <div class="container">
+      <div class="colleges-head text-center">
+        <div class="sec-head reveal from-left" style="margin-bottom:0;">
+          <div class="faq-eyebrow">Frequently Asked Questions</div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Should I participate in both MCC and State MBBS counselling?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, if you are eligible, participating in both the Medical Counselling Committee (MCC) counselling and
+              your respective State Counselling Authority can significantly improve your chances of securing an MBBS
+              seat. Since each counselling process has separate registrations, schedules, and seat pools, applying for
+              both gives you access to more admission opportunities.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span> How should I prioritise MBBS colleges during the choice filling process?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your choice filling strategy should be based on factors such as your NEET UG 2026 rank, previous years'
+              closing ranks, tuition fees, location, hospital infrastructure, clinical exposure, internship
+              opportunities, and preferred quota. Arranging colleges strategically in the order of your preference can
+              improve your chances of securing a seat that aligns with your academic and career goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I upgrade my allotted MBBS seat in the next counselling round?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, depending on the counselling authority's guidelines and your eligibility, you may choose to
+              participate in subsequent rounds for an upgrade. If a higher preferred college becomes available based
+              on your rank and preferences, your allotted seat may be upgraded during the next round of counselling.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if I do not report to the allotted medical college?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Candidates who fail to report to the allotted medical college within the prescribed reporting period
+              may lose their allotted seat. Depending on the counselling authority and the stage of counselling, such
+              candidates may also forfeit their security deposit or become ineligible for certain subsequent
+              counselling rounds. Candidates should always follow the reporting schedule notified by the concerned
+              counselling authority.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can personalised MBBS counselling help improve my admission chances?
+            </span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Personalised MBBS counselling provides guidance throughout the admission process, including college
+              shortlisting, choice filling strategy, quota selection, counselling registration, document preparation,
+              seat allotment decisions, and admission formalities. The guidance is tailored to your NEET UG rank,
+              category, budget, preferred colleges, and career aspirations, helping you make informed decisions during
+              every stage of counselling.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-section {
+      background: #ffffff;
+    }
+
+    .faq-eyebrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      margin: 0 auto 16px;
+
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .faq-eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+
+    .faq-wrapper {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-bottom: 2px solid #e7ebf3;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 12px 30px rgba(16, 24, 40, .06);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: none;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 16px 24px;
+
+      font-size: 17px;
+      font-weight: 600;
+      color: #1f2937;
+      text-align: left;
+    }
+
+    .faq-question .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eef3ff;
+      color: var(--brand);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+      font-weight: 400;
+
+      transition: .3s;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 22px;
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-item.active .icon {
+      transform: rotate(45deg);
+      background: var(--brand);
+      color: #fff;
+    }
+
+    @media(max-width:768px) {
 
       .faq-question {
-        width: 100%;
-        border: 0;
-        background: none;
-        cursor: pointer;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        padding: 16px 24px;
-
-        font-size: 17px;
-        font-weight: 600;
-        color: #1f2937;
-        text-align: left;
-      }
-
-      .faq-question .icon {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: #eef3ff;
-        color: var(--brand);
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 20px;
-        font-weight: 400;
-
-        transition: .3s;
-        flex-shrink: 0;
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .35s ease;
+        padding: 18px;
+        font-size: 16px;
       }
 
       .faq-answer p {
-        padding: 0 24px 22px;
-        margin: 0;
-        color: var(--ink);
-        line-height: 1.8;
-        font-size: 16px;
+        padding: 0 18px 18px;
       }
 
-      .faq-item.active .faq-answer {
-        max-height: 300px;
-      }
+    }
+  </style>
 
-      .faq-item.active .icon {
-        transform: rotate(45deg);
-        background: var(--brand);
-        color: #fff;
-      }
 
-      @media(max-width:768px) {
 
-        .faq-question {
-          padding: 18px;
-          font-size: 16px;
-        }
 
-        .faq-answer p {
-          padding: 0 18px 18px;
-        }
 
-      }
-    </style>
+  <!-- ============ FINAL CTA ============ -->
 
-    <!-- ============ FINAL CTA ============ -->
-    <section id="contact">
-      <div class="wrap">
-        <div class="final-cta reveal">
-          <h2>Want to Maximise Your Chances of Getting Into a Top MBBS College in Karnataka?
 
+  <section class="action-banner">
+    <div class="container-fluid">
+      <div class="action-wrapper">
+        <div class="action-content reveal">
+          <h2 class="reveal from-left">Want to Maximise Your Chances of Getting Into a <span
+              style="font-size: 47px; font-weight: 700;color: var(--brand-deep);">Top MBBS College </span>in Karnataka?
           </h2>
-          <div class="actions">
-            <a href="#lead-form" class="btn btn-on-dark">Enquire Now</a>
+          <div class="action-buttons reveal from-left">
+            <!-- <a href="#" class="btn btn-dark-custom">Enquire Now</a> -->
+            <a href="#" class="btn btn-light-custom">Enquire Now</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <style>
+    /* ===============================
+   ACTION BANNER
+================================== */
+
+    .action-banner {
+      padding: 90px 0;
+    }
+
+    .action-wrapper {
+      position: relative;
+      overflow: hidden;
+      min-height: 450px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 40px 50px;
+
+      background:
+        linear-gradient(60deg,
+          rgba(0, 19, 48, 0) 0%,
+          rgba(0, 0, 0, 0) 45%,
+          rgba(0, 0, 0, 0.89) 100%),
+        url("media/MBBS_BG (1).png") center center/cover no-repeat;
+    }
+
+    .action-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      /* 4px inside */
+      border: 2px solid rgb(253, 253, 253);
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    .action-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(90deg,
+          rgba(7, 18, 47, 0.041) 0%,
+          rgba(7, 18, 47, 0) 45%,
+          rgba(3, 21, 71, 0.466) 100%);
+    }
+
+    .action-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 600px;
+      padding: 40px 42px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
+    }
+
+    .action-content::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      /* 4px inside */
+      border: 2px solid rgb(255, 255, 255);
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+
+    .action-content h2 {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -.8px;
+      color: #081B3A;
+      margin-bottom: 18px;
+    }
+
+    .action-content p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #4B5563;
+      margin-bottom: 28px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 14px;
+    }
+
+    .action-buttons .btn {
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .btn-dark-custom {
+      background: #07122F;
+      color: #fff;
+      padding: 15px 34px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: .35s;
+    }
+
+    .btn-dark-custom:hover {
+      background: #0F1F4F;
+      transform: translateY(-4px);
+    }
+
+    .btn-light-custom {
+      font-size: 17px;
+      border: 2px solid #07122F;
+      color: #07122F;
+      background-color: white;
+      padding: 12px 25px;
+      border-radius: 9px 9px 9px 9px !important;
+      font-weight: 600;
+      transition: .35s;
+    }
+
+    .btn-light-custom:hover {
+      background: #07122F;
+      color: #fff;
+    }
+
+    /* ===============================
+   TABLET
+================================== */
+
+    @media(max-width:791px) {
+
+      .action-content h2 {
+        font-size: 26px !important;
+      }
+
+      .action-content h2 span {
+        font-size: 28px !important;
+      }
+
+      .action-wrapper {
+        justify-content: center;
+        padding: 40px;
+        min-height: 600px;
+      }
+
+      .action-content {
+        max-width: 600px;
+      }
+
+      .action-content h2 {
+        font-size: 38px;
+      }
+
+    }
+
+    /* ===============================
+   MOBILE
+================================== */
+
+    @media (max-width:767px) {
+
+      .action-wrapper {
+        min-height: 420px;
+        padding: 20px;
+        align-items: flex-end;
+        background-position: 35% center;
+      }
+
+      .action-content {
+        max-width: 100%;
+        padding: 28px 24px;
+        border-radius: 20px;
+      }
+
+      .action-content h2 {
+        font-size: 28px;
+      }
+
+      .action-content p {
+        font-size: 15px;
+        margin-bottom: 22px;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .action-buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
 
   <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="wrap">
-      <div class="row foot-flex g-4 g-lg-5">
-        <div class="col-lg-7 foot-brand">
-          <a href="#top" class="logo"><img
-              src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/logo1.webp"
-              alt="BangaloreStudy logo"></a>
-          <p>MBBS, BDS, BAMS, BNYS, MDS and nursing admissions guidance — helping students across India
-            navigate NEET‑UG counselling with confidence.</p>
-          <div class="foot-social">
-            <a href="https://www.facebook.com/bangalorestudy" aria-label="Facebook"><svg width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg></a>
-            <a href="https://twitter.com/BangaloreStudy2" aria-label="Twitter"><svg width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path
-                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C4 15.9 1.9 12.8 2 9c1.4.9 3 1.4 4.6 1.4C4.7 8.5 4.2 5.5 5.7 3.1c2.9 3.6 7.2 5.8 12 6-.7-3 2.6-5.7 5.4-4C24.5 5 22 4 22 4z" />
-              </svg></a>
-            <a href="https://www.youtube.com/channel/UCZP40_ivVcdelNOVhmQFr7w" aria-label="YouTube"><svg width="16"
-                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="2" y="5" width="20" height="14" rx="4" />
-                <path d="M10 9.5v5l4.5-2.5z" fill="currentColor" stroke="none" />
-              </svg></a>
-            <a href="https://instagram.com/bangalorestudy" aria-label="Instagram"><svg width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r=".6" fill="currentColor" stroke="none" />
-              </svg></a>
-            <a href="https://www.linkedin.com/company/learntech-edu-solutions-pvt-ltd/" aria-label="LinkedIn"><svg
-                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-                <path d="M10 9h4v2s1.2-2.3 4-2.3c3 0 4 2 4 5.3V21h-4v-6c0-1.5-.5-2.5-2-2.5s-2 1-2 2.5v6h-4z" />
-              </svg></a>
+  <footer class="footer-main">
+    <div class="container">
+      <div class="row align-items-start gy-5 gx-5">
+
+        <!-- Left -->
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+
+          <a href="#top" class="footer-logo">
+            <img src="https://preprod.bangalorestudy.com/assets/LandingPages/MbbsCounslling/logo1.webp"
+              alt="BangaloreStudy">
+          </a>
+
+          <p class="footer-desc">
+            MBBS, BDS, BAMS, BNYS, MDS and Nursing admissions guidance — helping
+            students across India navigate NEET-UG counselling with confidence.
+          </p>
+
+          <div class="footer-social">
+
+            <a href="https://www.facebook.com/bangalorestudy" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://twitter.com/BangaloreStudy2" aria-label="Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCZP40_ivVcdelNOVhmQFr7w" aria-label="Youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="https://instagram.com/bangalorestudy" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/company/learntech-edu-solutions-pvt-ltd/" aria-label="Linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
           </div>
+
         </div>
-        <div class="col-lg-4 offset-lg-3 foot-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a href="#top">Home</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#process">MBBS Counselling</a></li>
-            <li><a href="#predictor">NEET Rank Predictor</a></li>
-            <li><a href="#colleges">Top Colleges</a></li>
+
+        <!-- Right -->
+        <div class="col-lg-5">
+
+          <h5 class="footer-title">
+            Contact Us
+          </h5>
+
+          <ul class="footer-contact">
+
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:08022454991">080-22454991</a>
+            </li>
+
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:08026631169">080-26631169</a>
+            </li>
+
+            <li>
+              <i class="fas fa-mobile-alt"></i>
+              <a href="tel:+919036020076">+91 9036020076</a>
+            </li>
+
+            <li>
+              <i class="fas fa-headset"></i>
+              <a href="tel:18001208696">1800 120 8696 (Toll Free)</a>
+            </li>
+
+            <li>
+              <i class="fas fa-globe"></i>
+              <a href="tel:+971502436552">+971 502436552 (Dubai)</a>
+            </li>
+
           </ul>
+
         </div>
+
       </div>
     </div>
   </footer>
