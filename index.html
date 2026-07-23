@@ -48,6 +48,7 @@
     }
 
     html {
+      overflow-x: hidden;
       scroll-behavior: smooth !important;
     }
 
@@ -71,6 +72,10 @@
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    section {
+      scroll-margin-top: 100px;
     }
 
     img {
@@ -1766,6 +1771,18 @@
       flex-wrap: wrap;
     }
 
+    /* ======================footer============== */
+
+    .footer-main {
+      overflow-x: hidden;
+      /* contains the row's negative-margin bleed */
+    }
+
+    .footer-main .row {
+      --bs-gutter-x: 1.5rem;
+      /* matches .container's default padding, kills the mismatch */
+    }
+
     .footer-main {
       background: var(--ink);
       color: rgba(255, 255, 255, .75);
@@ -1954,11 +1971,10 @@
         <a href="#top">Home</a>
         <a href="#why-us">Why Us</a>
         <a href="#process">MBBS Counselling</a>
-        <a href="#documents">Documents</a>
         <a href="#predictor">Rank Predictor</a>
         <a href="#colleges">Top Colleges</a>
         <a href="#faq">FAQs</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#footer">Contact Us</a>
       </nav>
       <div class="nav-cta">
         <a href="tel:+919036020076" class="call-btn">
@@ -3347,7 +3363,7 @@
         </div>
       </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 reveal">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 ">
         <div class="col">
           <div class="college-card">
             <div class="img-wrap"><img
@@ -3659,7 +3675,7 @@
 
   <!-- ============ FAQ ================== -->
 
-  <section class="faq-section section-padding">
+  <section class="faq-section section-padding" id="faq">
     <div class="container">
       <div class="colleges-head text-center">
         <div class="sec-head reveal from-left" style="margin-bottom:0;">
@@ -3786,7 +3802,7 @@
     }
 
     .faq-item:hover {
-      box-shadow: 0 12px 30px rgba(16, 24, 40, .06);
+      border-bottom: 2px solid #c3d6fa;
     }
 
     .faq-question {
@@ -4024,7 +4040,7 @@
     @media(max-width:791px) {
 
       .action-content h2 {
-        font-size: 26px !important;
+        font-size: 23px !important;
       }
 
       .action-content h2 span {
@@ -4086,7 +4102,7 @@
   </style>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer-main">
+  <footer class="footer-main" id="footer">
     <div class="container">
       <div class="row align-items-start gy-5 gx-5">
 
@@ -4100,8 +4116,8 @@
           </a>
 
           <p class="footer-desc">
-            MBBS, BDS, BAMS, BNYS, MDS and Nursing admissions guidance — helping
-            students across India navigate NEET-UG counselling with confidence.
+            Fulfilling Academic Aspirations with our Expertise in Educational Counselling.
+
           </p>
 
           <div class="footer-social">
@@ -4299,23 +4315,25 @@
 
 
     document.querySelectorAll(".faq-question").forEach(question => {
-
       question.addEventListener("click", () => {
-
         const item = question.parentElement;
+        const answer = item.querySelector(".faq-answer");
 
         document.querySelectorAll(".faq-item").forEach(faq => {
-
           if (faq !== item) {
             faq.classList.remove("active");
+            faq.querySelector(".faq-answer").style.maxHeight = null;
           }
-
         });
 
         item.classList.toggle("active");
 
+        if (item.classList.contains("active")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = null;
+        }
       });
-
     });
   </script>
 
