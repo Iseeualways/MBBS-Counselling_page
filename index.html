@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NEET-UG MBBS Counselling 2026 Landing Page</title>
+    <title>NEET-UG MBBS 2025 Counselling Guidance | BangaloreStudy</title>
     <meta name="description"
         content="Get to know everything about the MBBS Counselling 2025 Process in India: MCC NEET-UG Counselling 2025 and Karnataka Medical Counselling.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,17 +220,11 @@
 
         /* ============ TOP BAR ============ */
 
-        .topbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 199;
-        }
+
 
         header.nav {
             position: fixed;
-            top: var(--topbar-h, 30px);
+            top: 0;
             left: 0;
             width: 100%;
             z-index: 200;
@@ -240,49 +234,7 @@
             padding-top: calc(clamp(2px, 7vw, 18px) + var(--topbar-h, 30px) + var(--nav-h, 76px));
         }
 
-        .topbar {
-            background: var(--brand);
-            color: #fff;
-            font-size: 13px;
-            font-weight: 400;
-            overflow: hidden;
-            white-space: nowrap;
-            /* position: fixed is set above */
-        }
 
-        .topbar-track {
-            display: inline-flex;
-            align-items: center;
-            gap: 60px;
-            padding: 3px 0;
-            animation: marquee 18s linear infinite;
-        }
-
-        .topbar-track span {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topbar-track svg {
-            flex-shrink: 0;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .topbar-track {
-                animation: none;
-            }
-        }
 
         /* ============ NAV ============ */
         header.nav {
@@ -319,7 +271,7 @@
             }
         }
 
-       
+
         @media (max-width: 468px) {
 
             .mini-action-box {
@@ -723,65 +675,65 @@
         /* ===========================
    MOBILE
 =========================== */
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    .lead-card {
-        width: 100%;
-        max-width: 380px;
-        margin: 24px auto 0;
-        padding: 24px 20px;
-    }
+            .lead-card {
+                width: 100%;
+                max-width: 380px;
+                margin: 24px auto 0;
+                padding: 24px 20px;
+            }
 
-    .lead-card h3 {
-        font-size: 17px;
-        line-height: 1.4;
-        margin-bottom: 18px;
-    }
+            .lead-card h3 {
+                font-size: 17px;
+                line-height: 1.4;
+                margin-bottom: 18px;
+            }
 
-    .field {
-        margin-bottom: 12px;
-    }
+            .field {
+                margin-bottom: 12px;
+            }
 
-    .field input,
-    .field select {
-        font-size: 14px;
-        padding: 12px 14px;
-    }
+            .field input,
+            .field select {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
 
-    .btn-glass {
-        width: 100%;
-        justify-content: center;
-        padding: 13px 18px;
-    }
+            .btn-glass {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 18px;
+            }
 
-}
+        }
 
-/* Small phones */
-@media (max-width: 480px) {
+        /* Small phones */
+        @media (max-width: 480px) {
 
-    .lead-card {
-        width: calc(100% - 24px);
-        max-width: 100%;
-        margin: 20px auto 0;
-        padding: 22px 18px;
-        border-radius: 18px;
-    }
+            .lead-card {
+                width: calc(100% - 24px);
+                max-width: 100%;
+                margin: 20px auto 0;
+                padding: 22px 18px;
+                border-radius: 18px;
+            }
 
-    .lead-card h3 {
-        font-size: 16px;
-    }
+            .lead-card h3 {
+                font-size: 16px;
+            }
 
-    .field input,
-    .field select {
-        padding: 11px 14px;
-        font-size: 14px;
-    }
+            .field input,
+            .field select {
+                padding: 11px 14px;
+                font-size: 14px;
+            }
 
-}
+        }
 
         /* ============ SECTION HEADERS ============ */
         section {
-            padding: clamp(30px, 7vw, 50px) 0;
+            padding: clamp(20px, 7vw, 50px) 0;
         }
 
         .sec-head {
@@ -839,7 +791,7 @@
             background: var(--white);
             border: 1px solid var(--line);
             border-radius: var(--r-md);
-            padding: 30px 26px;
+            padding: 30px 16px;
             width: 100%;
             height: 100%;
 
@@ -933,22 +885,56 @@
             color: var(--amber);
         }
 
-        .why-card h3 {
-            font-size: 19px;
-            font-weight: 700;
-            color: #2b2b2b;
-            margin-bottom: 12px;
-            min-height: 52px;
-        }
+
 
         .why-card p {
             flex: 1;
             background: #fff;
             border-radius: 10px;
             padding: 16px;
-            font-size: 14px;
+            font-size: 15px;
             color: var(--ink);
             line-height: 1.65;
+        }
+
+
+        .why-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .why-card .ic {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+
+        .why-card h3 {
+            margin: 0;
+            min-height: auto;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        @media(max-width:768px) {
+
+            .why-top {
+                gap: 14px;
+                align-items: flex-start;
+            }
+
+            .why-card .ic {
+                width: 42px;
+                height: 42px;
+            }
+
+            .why-card h3 {
+                font-size: 17px;
+            }
+
         }
 
         /* ============ PROCESS ============ */
@@ -1678,21 +1664,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 18px;
+            /* Optional */
         }
 
         .college-card .img-wrap img {
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             object-fit: contain;
             transition: transform .4s var(--ease);
         }
+
 
         .college-card:hover .img-wrap img {
             transform: scale(1.04);
         }
 
         .college-card .body {
-            padding: 20px 20px 22px;
+            padding: 0px 20px 22px;
             background: linear-gradient(180deg, #f2f2f250 0%, #e8e8e8 50%, #dbdbdb 100%);
             border-bottom: 3px solid rgba(59, 59, 59, 0.349);
             border-radius: 14px;
@@ -1872,12 +1861,13 @@
         .footer-main {
             background: var(--ink);
             color: rgba(255, 255, 255, .75);
-            padding: 70px 0;
+            padding: 30px 0;
         }
 
         .footer-logo img {
             height: 70px;
             width: auto;
+            filter: brightness(0) invert(1);
         }
 
         .footer-desc {
@@ -2030,27 +2020,7 @@
 
 <body>
 
-    <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
-    <div class="topbar">
-        <div class="topbar-track">
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 8v4l3 2" />
-                </svg> MBBS NEET‑UG 2026 Counselling Guidance is now open — Connect with our experts →</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 8v4l3 2" />
-                </svg> AACCC All‑India &amp; KEA Karnataka counselling, explained end to end →</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 8v4l3 2" />
-                </svg> MBBS NEET‑UG 2026 Counselling Guidance is now open — Connect with our experts →</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 8v4l3 2" />
-                </svg> AACCC All‑India &amp; KEA Karnataka counselling, explained end to end →</span>
-        </div>
-    </div>
+
 
     <!-- ============ NAV ============ -->
     <header class="nav " id="siteNav">
@@ -2074,7 +2044,7 @@
                         <path
                             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
-                    <strong>90360 20076</strong>
+                    <strong>1800 120 8696 (Toll Free)</strong>
                 </a>
 
                 <style>
@@ -2106,7 +2076,7 @@
                     }
 
                     .call-btn strong {
-                        font-size: 15px !important;
+                        font-size: 14px !important;
                         font-weight: 500;
                     }
 
@@ -2305,74 +2275,110 @@
                 <p class="eyebrow">Why Us?</p>
                 <h2>Your Trusted Partner for MBBS Counselling</h2>
             </div>
+
             <div class="row g-4 reveal stagger">
+
+                <!-- Card 1 -->
                 <div class="col-12 col-md-6 col-lg-3" style="--i:0">
                     <div class="why-card c-brand">
-                        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg></div>
 
-                        <h3>Personalized MBBS Counselling</h3>
-                        <p>Get expert guidance based on your NEET UG rank, preferred states, college preferences,
-                            budget, and
-                            career aspirations. Our experts help you identify the best MBBS colleges and counselling
-                            options suited
-                            to your profile.
+                        <div class="why-top">
+                            <div class="ic">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+
+                            <h3>Personalized MBBS Counselling</h3>
+                        </div>
+
+                        <p>
+                            Get expert guidance based on your NEET UG rank, preferred states, college preferences,
+                            budget, and career aspirations. Our experts help you identify the best MBBS colleges
+                            and counselling options suited to your profile.
                         </p>
+
                     </div>
                 </div>
+
+                <!-- Card 2 -->
                 <div class="col-12 col-md-6 col-lg-3" style="--i:1">
                     <div class="why-card c-rose">
-                        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg></div>
 
-                        <h3>Expert Guidance</h3>
-                        <p>Navigate All India Quota, State Quota, and Deemed University counselling with confidence.
-                            Our
-                            experienced admission experts provide accurate guidance at every stage, helping you make
-                            informed
-                            choices.
+                        <div class="why-top">
+                            <div class="ic">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+
+                            <h3>Expert Guidance</h3>
+                        </div>
+
+                        <p>
+                            Navigate All India Quota, State Quota, and Deemed University counselling with confidence.
+                            Our experienced admission experts provide accurate guidance at every stage, helping you make
+                            informed choices.
                         </p>
+
                     </div>
                 </div>
+
+                <!-- Card 3 -->
                 <div class="col-12 col-md-6 col-lg-3" style="--i:2">
                     <div class="why-card c-violet">
-                        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="12" r="9" />
-                                <circle cx="12" cy="12" r="4.2" />
-                                <circle cx="12" cy="12" r=".6" fill="currentColor" />
-                            </svg></div>
 
-                        <h3>Complete MBBS Admission Assistance</h3>
-                        <p>From choice filling and seat allotment to document verification, reporting, and admission
-                            formalities,
-                            we support you throughout the MBBS counselling process to ensure a smooth admission
-                            experience.
+                        <div class="why-top">
+                            <div class="ic">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <circle cx="12" cy="12" r="4.2" />
+                                    <circle cx="12" cy="12" r=".6" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <h3>Complete MBBS Admission Assistance</h3>
+                        </div>
+
+                        <p>
+                            From choice filling and seat allotment to document verification, reporting, and admission
+                            formalities, we support you throughout the MBBS counselling process to ensure a smooth
+                            admission experience.
                         </p>
+
                     </div>
                 </div>
+
+                <!-- Card 4 -->
                 <div class="col-12 col-md-6 col-lg-3" style="--i:3">
                     <div class="why-card c-amber">
-                        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8">
-                                <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                            </svg></div>
 
-                        <h3>Simplified and Error Free Counselling</h3>
-                        <p>Every counselling round comes with strict deadlines and critical decisions. Our team
-                            helps you complete
-                            each step accurately, avoid common mistakes, and improve your chances of securing an
-                            MBBS seat.
+                        <div class="why-top">
+                            <div class="ic">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                </svg>
+                            </div>
+
+                            <h3>Simplified and Error Free Counselling</h3>
+                        </div>
+
+                        <p>
+                            Every counselling round comes with strict deadlines and critical decisions.
+                            Our team helps you complete each step accurately, avoid common mistakes,
+                            and improve your chances of securing an MBBS seat.
                         </p>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -2850,58 +2856,38 @@
 
             position: relative;
             z-index: 2;
-
             display: inline-flex;
             align-items: center;
             gap: 14px;
-
             padding: 6px 10px;
-
             border-radius: 999px;
-            border: 2px solid rgba(233, 233, 255, 0.637);
+            border: 1px solid rgba(0, 0, 71, 0.363);
             background: #fff;
-
             color: #071B4D;
-
             font-weight: 600;
-
             text-decoration: none;
-
             transition: .35s ease;
-
         }
 
         .btn-primary-action span {
-
             width: 36px;
             height: 36px;
-
             border-radius: 50%;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: #071B4D;
-
             color: #fff;
-
             transition: .35s;
-
         }
 
         .btn-primary-action:hover {
             background-color: white;
-            transform: translateY(-4px);
-
             color: #071B4D;
-
         }
 
         .btn-primary-action:hover span {
-
             transform: translateX(5px);
-
         }
 
         /* ===============================
@@ -3838,107 +3824,6 @@
 
     <!-- ============ FAQ ================== -->
 
-    <section class="faq-section section-padding" id="faq">
-        <div class="container">
-            <div class="colleges-head text-center">
-                <div class="sec-head reveal from-left" style="margin-bottom:0;">
-                    <div class="faq-eyebrow">Frequently Asked Questions</div>
-                    <h2>Frequently Asked Questions</h2>
-                </div>
-            </div>
-
-            <div class="faq-wrapper">
-                <div class="faq-item active">
-                    <button class="faq-question">
-                        <span>Should I participate in both MCC and State MBBS counselling?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, if you are eligible, participating in both the Medical Counselling Committee (MCC)
-                            counselling and
-                            your respective State Counselling Authority can significantly improve your chances of
-                            securing an MBBS
-                            seat. Since each counselling process has separate registrations, schedules, and seat pools,
-                            applying for
-                            both gives you access to more admission opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span> How should I prioritise MBBS colleges during the choice filling process?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Your choice filling strategy should be based on factors such as your NEET UG 2026 rank,
-                            previous years'
-                            closing ranks, tuition fees, location, hospital infrastructure, clinical exposure,
-                            internship
-                            opportunities, and preferred quota. Arranging colleges strategically in the order of your
-                            preference can
-                            improve your chances of securing a seat that aligns with your academic and career goals.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can I upgrade my allotted MBBS seat in the next counselling round?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, depending on the counselling authority's guidelines and your eligibility, you may choose
-                            to
-                            participate in subsequent rounds for an upgrade. If a higher preferred college becomes
-                            available based
-                            on your rank and preferences, your allotted seat may be upgraded during the next round of
-                            counselling.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What happens if I do not report to the allotted medical college?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Candidates who fail to report to the allotted medical college within the prescribed reporting
-                            period
-                            may lose their allotted seat. Depending on the counselling authority and the stage of
-                            counselling, such
-                            candidates may also forfeit their security deposit or become ineligible for certain
-                            subsequent
-                            counselling rounds. Candidates should always follow the reporting schedule notified by the
-                            concerned
-                            counselling authority.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How can personalised MBBS counselling help improve my admission chances?
-                        </span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Personalised MBBS counselling provides guidance throughout the admission process, including
-                            college
-                            shortlisting, choice filling strategy, quota selection, counselling registration, document
-                            preparation,
-                            seat allotment decisions, and admission formalities. The guidance is tailored to your NEET
-                            UG rank,
-                            category, budget, preferred colleges, and career aspirations, helping you make informed
-                            decisions during
-                            every stage of counselling.
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <style>
         .faq-section {
             background: #ffffff;
@@ -3946,12 +3831,10 @@
 
         .faq-eyebrow {
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
             gap: 10px;
-
             margin: 0 auto 16px;
-
             font-size: 16px;
             font-weight: 500;
             letter-spacing: .05em;
@@ -4054,6 +3937,170 @@
 
             .faq-answer p {
                 padding: 0 18px 18px;
+            }
+
+        }
+    </style>
+
+
+
+    <section class="faq-section section-padding" id="faq">
+        <div class="container">
+
+            <div class="faq-layout">
+
+                <!-- Left -->
+                <div class="faq-head">
+                    <div class="colleges-head">
+                        <div class="sec-head reveal from-left" style="margin-bottom:0;">
+                            <div class="faq-eyebrow">Frequently Asked Questions</div>
+                            <h2>Frequently <br> Asked Questions</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right -->
+                <div class="faq-wrapper">
+
+                    <div class="faq-item active">
+                        <button class="faq-question">
+                            <span>Should I participate in both MCC and State MBBS counselling?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, if you are eligible, participating in both the Medical Counselling Committee (MCC)
+                                counselling and
+                                your respective State Counselling Authority can significantly improve your chances of
+                                securing an MBBS
+                                seat. Since each counselling process has separate registrations, schedules, and seat
+                                pools,
+                                applying for
+                                both gives you access to more admission opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span> How should I prioritise MBBS colleges during the choice filling process?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Your choice filling strategy should be based on factors such as your NEET UG 2026 rank,
+                                previous years'
+                                closing ranks, tuition fees, location, hospital infrastructure, clinical exposure,
+                                internship
+                                opportunities, and preferred quota. Arranging colleges strategically in the order of
+                                your
+                                preference can
+                                improve your chances of securing a seat that aligns with your academic and career goals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I upgrade my allotted MBBS seat in the next counselling round?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, depending on the counselling authority's guidelines and your eligibility, you may
+                                choose
+                                to
+                                participate in subsequent rounds for an upgrade. If a higher preferred college becomes
+                                available based
+                                on your rank and preferences, your allotted seat may be upgraded during the next round
+                                of
+                                counselling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What happens if I do not report to the allotted medical college?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Candidates who fail to report to the allotted medical college within the prescribed
+                                reporting
+                                period
+                                may lose their allotted seat. Depending on the counselling authority and the stage of
+                                counselling, such
+                                candidates may also forfeit their security deposit or become ineligible for certain
+                                subsequent
+                                counselling rounds. Candidates should always follow the reporting schedule notified by
+                                the
+                                concerned
+                                counselling authority.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How can personalised MBBS counselling help improve my admission chances?
+                            </span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Personalised MBBS counselling provides guidance throughout the admission process,
+                                including
+                                college
+                                shortlisting, choice filling strategy, quota selection, counselling registration,
+                                document
+                                preparation,
+                                seat allotment decisions, and admission formalities. The guidance is tailored to your
+                                NEET
+                                UG rank,
+                                category, budget, preferred colleges, and career aspirations, helping you make informed
+                                decisions during
+                                every stage of counselling.
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        .faq-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .faq-head {
+            width: 32%;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+        }
+
+        .faq-wrapper {
+            width: 68%;
+            max-width: none;
+            margin: 0;
+        }
+
+        @media (max-width: 991px) {
+
+            .faq-layout {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .faq-head,
+            .faq-wrapper {
+                width: 100%;
+            }
+
+            .faq-head {
+                position: static;
             }
 
         }
@@ -4375,18 +4422,6 @@
         (function () {
             "use strict";
 
-            /* ---------- FIXED HEADER OFFSETS ---------- */
-            function setFixedOffsets() {
-                var topbarEl = document.querySelector('.topbar');
-                var navEl = document.getElementById('siteNav');
-                var topbarH = topbarEl ? topbarEl.offsetHeight : 30;
-                var navH = navEl ? navEl.offsetHeight : 76;
-                document.documentElement.style.setProperty('--topbar-h', topbarH + 'px');
-                document.documentElement.style.setProperty('--nav-h', navH + 'px');
-            }
-            setFixedOffsets();
-            window.addEventListener('resize', setFixedOffsets);
-            window.addEventListener('load', setFixedOffsets);
 
             /* ---------- NAV SCROLL SHADOW ---------- */
             var nav = document.getElementById('siteNav');
