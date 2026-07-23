@@ -319,22 +319,8 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .lead-card {
-                width: 100%;
-                max-width: 378px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 24px;
-                padding: 24px;
-            }
-        }
-
+       
         @media (max-width: 468px) {
-            .lead-card {
-                margin-left: 0px !important;
-                max-width: 345px;
-            }
 
             .mini-action-box {
                 padding: 18px 20px !important;
@@ -503,6 +489,14 @@
 
         .mobile-nav.is-open a:nth-child(6) {
             transition-delay: .38s;
+        }
+
+        .mobile-nav.is-open a:nth-child(7) {
+            transition-delay: .40s;
+        }
+
+        .mobile-nav.is-open a:nth-child(8) {
+            transition-delay: .42s;
         }
 
         .mobile-nav-foot {
@@ -725,6 +719,65 @@
             font-size: 13.5px;
             color: var(--muted);
         }
+
+        /* ===========================
+   MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .lead-card {
+        width: 100%;
+        max-width: 380px;
+        margin: 24px auto 0;
+        padding: 24px 20px;
+    }
+
+    .lead-card h3 {
+        font-size: 17px;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+
+    .field {
+        margin-bottom: 12px;
+    }
+
+    .field input,
+    .field select {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .btn-glass {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 18px;
+    }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .lead-card {
+        width: calc(100% - 24px);
+        max-width: 100%;
+        margin: 20px auto 0;
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .lead-card h3 {
+        font-size: 16px;
+    }
+
+    .field input,
+    .field select {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+
+}
 
         /* ============ SECTION HEADERS ============ */
         section {
