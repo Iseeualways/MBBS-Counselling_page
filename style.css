@@ -59,7 +59,7 @@
   }
 
   section {
-      scroll-margin-top: calc(var(--topbar-h, 30px) + var(--nav-h, 76px) + 12px);
+      scroll-margin-top: calc(var(--topbar-h, 10px) + var(--nav-h, 36px));
   }
 
   img {
@@ -348,10 +348,10 @@
   }
 
   .nav-toggle span {
-      width: 22px;
-      height: 2px;
+      width: 24px;
+      height: 1.8px;
       border-radius: 2px;
-      background: var(--ink);
+      background: black;
       transition: all .35s var(--ease);
   }
 
@@ -371,7 +371,7 @@
       position: fixed;
       inset: 0;
       z-index: 1200;
-      background: linear-gradient(135deg, #ffffff, #c2daff);
+      background: linear-gradient(135deg, #ffffff, #ffffff);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -386,10 +386,10 @@
 
   .mobile-nav a {
       font-size: clamp(28px, 8vw, 20px);
-      font-weight: 400;
+      font-weight: 500;
       color: #000522;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(32, 32, 32, 0.062);
+      border-bottom: 1px solid rgba(32, 32, 32, 0.164);
       opacity: 0;
       transform: translateY(16px);
       transition: opacity .5s var(--ease), transform .5s var(--ease);
