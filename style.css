@@ -475,7 +475,7 @@
   }
 
   .hero-headline {
-      font-size: clamp(2.5rem, 5vw, 3.1rem);
+      font-size: clamp(2.4rem, 5vw, 3.1rem);
       font-weight: 600;
       line-height: 1.14;
       color: var(--ink);
@@ -651,6 +651,10 @@
    MOBILE
 =========================== */
   @media (max-width: 768px) {
+      .hero-copy .eyebrow {
+          font-size: 11px;
+          letter-spacing: 0.4px;
+      }
 
       .lead-card {
           width: 100%;
@@ -2003,7 +2007,7 @@
 
   @media (max-width: 768px) {
       .hero-copy {
-          margin-top: 30px;
+          margin-top: 25px;
           padding-top: 0;
       }
 
