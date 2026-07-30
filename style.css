@@ -1922,9 +1922,8 @@
 
   .footer-contact li {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 14px;
+      gap: 8px;
       margin-bottom: 6px;
   }
 
